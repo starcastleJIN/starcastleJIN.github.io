@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "new-post": "node scripts/new-post.js"
+    "new-post": "node scripts/new-post.js",
+    "deploy": "node scripts/deploy.js"
   },
   "keywords": ["portfolio", "blog", "github-pages", "markdown"],
   "author": "",
