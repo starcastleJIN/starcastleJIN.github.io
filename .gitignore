@@ -7,3 +7,7 @@ Thumbs.db
 
 # Node
 node_modules/
+
+# Secrets & Environment
+.env
+.env.*
