@@ -1,0 +1,26 @@
+[
+  {
+    "id": "welcome-to-my-blog",
+    "slug": "welcome-to-my-blog",
+    "title": "GitHub Pages로 나만의 포트폴리오 & 기술 블로그 시작하기",
+    "excerpt": "정적 사이트의 매력과 GitHub Pages를 활용하여 무료로 호스팅되는 나만의 개인 공간을 구축한 이야기입니다.",
+    "date": "2025-01-15",
+    "category": "Web",
+    "tags": ["GitHub Pages", "Web", "Frontend", "회고"],
+    "readingTime": "3 min",
+    "file": "01-welcome.md",
+    "featured": true
+  },
+  {
+    "id": "modern-frontend-architecture",
+    "slug": "modern-frontend-architecture",
+    "title": "2025년 웹 개발 트렌드와 클린 코드 아키텍처",
+    "excerpt": "유지보수성과 가독성을 극대화하는 프론트엔드 컴포넌트 설계 원칙과 실제 코드 패턴을 정리해봅니다.",
+    "date": "2025-02-10",
+    "category": "Frontend",
+    "tags": ["JavaScript", "TypeScript", "Architecture", "CleanCode"],
+    "readingTime": "5 min",
+    "file": "02-tech-stack-and-architecture.md",
+    "featured": true
+  }
+]

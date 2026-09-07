@@ -1,0 +1,13 @@
+{
+  "name": "github-portfolio-blog",
+  "version": "1.0.0",
+  "description": "GitHub Pages 개인 포트폴리오 & 기술 블로그",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "new-post": "node scripts/new-post.js"
+  },
+  "keywords": ["portfolio", "blog", "github-pages", "markdown"],
+  "author": "",
+  "license": "MIT"
+}
