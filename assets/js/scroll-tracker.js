@@ -12,8 +12,7 @@
     { id: "skills-section", title: "02. Tech Stack" },
     { id: "philosophy-section", title: "03. Philosophy" },
     { id: "projects", title: "04. Projects" },
-    { id: "knowledge-section", title: "05. Tech Notes" },
-    { id: "experience", title: "06. Journey" }
+    { id: "notes-journey-section", title: "05. Tech Notes & Journey" }
   ];
 
   function initFloatingTracker() {
@@ -80,24 +79,31 @@
       let activeIndex = 0;
       let minDistance = Infinity;
 
-      validSections.forEach((sec, idx) => {
-        const rect = sec.el.getBoundingClientRect();
-        const top = scrollY + rect.top;
-        const bottom = top + rect.height;
-        const center = (top + bottom) / 2;
+      // 페이지 최하단 도달 검사 (푸터 혹은 마지막 행 도달 시 5번 섹션 안정적 유지)
+      const isBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 60);
 
-        // 초점 라인과 섹션 중심 간의 거리 계산
-        const distance = Math.abs(focusLine - center);
+      if (isBottom) {
+        activeIndex = validSections.length - 1;
+      } else {
+        validSections.forEach((sec, idx) => {
+          const rect = sec.el.getBoundingClientRect();
+          const top = scrollY + rect.top;
+          const bottom = top + rect.height;
+          const center = (top + bottom) / 2;
 
-        // 현재 초점 라인이 섹션 영역 내에 포함되면 최우선
-        if (focusLine >= top && focusLine <= bottom) {
-          activeIndex = idx;
-          minDistance = -1;
-        } else if (minDistance !== -1 && distance < minDistance) {
-          minDistance = distance;
-          activeIndex = idx;
-        }
-      });
+          // 초점 라인과 섹션 중심 간의 거리 계산
+          const distance = Math.abs(focusLine - center);
+
+          // 현재 초점 라인이 섹션 영역 내에 포함되면 최우선
+          if (focusLine >= top && focusLine <= bottom) {
+            activeIndex = idx;
+            minDistance = -1;
+          } else if (minDistance !== -1 && distance < minDistance) {
+            minDistance = distance;
+            activeIndex = idx;
+          }
+        });
+      }
 
       // 각 아이템 스타일 갱신
       items.forEach((item, idx) => {
