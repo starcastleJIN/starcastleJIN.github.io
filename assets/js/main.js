@@ -87,6 +87,15 @@
         el.style.display = "none";
       }
     });
+
+    // 티스토리 / 외부 기술 블로그 링크 연동
+    if (socials.blog) {
+      document.querySelectorAll("a.blog-link").forEach((el) => {
+        el.href = socials.blog;
+        el.target = "_blank";
+        el.rel = "noopener noreferrer";
+      });
+    }
   }
 
   // 4. 맨 위로 스크롤 버튼

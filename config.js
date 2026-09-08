@@ -22,6 +22,7 @@ const SITE_CONFIG = {
     linkedin: "", // 필요시 입력 (예: https://linkedin.com/in/아이디)
     twitter: "",
     email: "mailto:jsgyu0223@gmail.com",
+    blog: "" // 티스토리 블로그 주소 (사용자 입력 대기)
   },
 
   // 벤토 위젯 1: 현재 집중해서 공부/개발 중인 기술 (Currently Hacking & Learning)
