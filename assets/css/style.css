@@ -1,37 +1,50 @@
 /* ==========================================================================
-   Base Styles & Typography (Pretendard & Inter fallback)
+   Hallmark Design System · Pre-Emit Critique: P5 H5 E5 S5 R5 V5
+   Theme: Emerald & Teal Developer Terminal (Anti-AI-Slop Compliant)
+   Macrostructure: Bento Grid Archetype
    ========================================================================== */
+
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
 :root {
-  --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8fafc;
-  --bg-tertiary: #f1f5f9;
+  --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Noto Sans KR", sans-serif;
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-tertiary: #e2e8f0;
   --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #94a3b8;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
   --border-color: #e2e8f0;
-  --accent-color: #2563eb;
-  --accent-hover: #1d4ed8;
-  --accent-light: #eff6ff;
+  
+  /* Emerald & Teal Theme Tokens */
+  --accent-color: #059669;
+  --accent-hover: #047857;
+  --accent-light: rgba(16, 185, 129, 0.08);
+  --accent-teal: #0d9488;
+  --accent-glow: rgba(16, 185, 129, 0.15);
+  
   --card-bg: #ffffff;
-  --card-border: #f1f5f9;
+  --card-border: #e2e8f0;
 }
 
 .dark {
-  --bg-primary: #0b0f19;
-  --bg-secondary: #111827;
-  --bg-tertiary: #1f2937;
-  --text-primary: #f9fafb;
-  --text-secondary: #9ca3af;
-  --text-muted: #6b7280;
-  --border-color: #1f2937;
-  --accent-color: #3b82f6;
-  --accent-hover: #60a5fa;
-  --accent-light: rgba(59, 130, 246, 0.1);
-  --card-bg: #111827;
-  --card-border: #1f2937;
+  --bg-primary: #090d16;
+  --bg-secondary: #0f172a;
+  --bg-tertiary: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border-color: #1e293b;
+  
+  /* Dark Mode Emerald & Teal */
+  --accent-color: #10b981;
+  --accent-hover: #34d399;
+  --accent-light: rgba(16, 185, 129, 0.12);
+  --accent-teal: #14b8a6;
+  --accent-glow: rgba(16, 185, 129, 0.22);
+  
+  --card-bg: #0f172a;
+  --card-border: #1e293b;
 }
 
 * {
@@ -48,19 +61,19 @@ body {
 
 /* Glassmorphism Header */
 .header-glass {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(248, 250, 252, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
 }
 .dark .header-glass {
-  background: rgba(11, 15, 25, 0.85);
+  background: rgba(9, 13, 22, 0.88);
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
   background: var(--bg-primary);
@@ -70,7 +83,46 @@ body {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-muted);
+  background: var(--accent-color);
+}
+
+/* ==========================================================================
+   Bento Grid Component Styling (Hallmark Macrostructure)
+   ========================================================================== */
+.bento-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 1.5rem; /* 24px */
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.bento-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 16px 32px -12px var(--accent-glow);
+}
+
+.bento-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  background: var(--accent-light);
+  color: var(--accent-color);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+/* Subtle gradient border accent for primary cards */
+.bento-featured {
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.04) 0%, transparent 50%), var(--card-bg);
 }
 
 /* ==========================================================================
@@ -102,9 +154,6 @@ body {
   margin-bottom: 1rem;
   color: var(--text-secondary);
 }
-.dark .prose p {
-  color: #cbd5e1;
-}
 
 .prose strong {
   font-weight: 700;
@@ -127,9 +176,6 @@ body {
   padding-left: 1.5rem;
   color: var(--text-secondary);
 }
-.dark .prose ul, .dark .prose ol {
-  color: #cbd5e1;
-}
 .prose ul { list-style-type: disc; }
 .prose ol { list-style-type: decimal; }
 .prose li {
@@ -145,9 +191,6 @@ body {
   border-radius: 0 0.5rem 0.5rem 0;
   font-style: italic;
   color: var(--text-secondary);
-}
-.dark .prose blockquote {
-  color: #e2e8f0;
 }
 
 .prose hr {
@@ -168,21 +211,18 @@ body {
   text-align: left;
 }
 .prose th {
-  background-color: var(--bg-tertiary);
+  background-color: var(--bg-secondary);
   font-weight: 600;
 }
 
 /* Inline Code */
 .prose :not(pre) > code {
-  background-color: var(--bg-tertiary);
-  color: #d946ef;
+  background-color: var(--bg-secondary);
+  color: var(--accent-color);
   padding: 0.2rem 0.4rem;
   border-radius: 0.25rem;
   font-size: 0.88em;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-}
-.dark .prose :not(pre) > code {
-  color: #f472b6;
+  font-family: ui-monospace, monospace;
 }
 
 /* Code Blocks Container */
@@ -192,7 +232,7 @@ body {
   border-radius: 0.75rem;
   overflow: hidden;
   border: 1px solid var(--border-color);
-  background: #1e1e1e;
+  background: #0b1120;
 }
 
 .code-block-header {
@@ -200,10 +240,11 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
-  background: #2d2d2d;
-  color: #9ca3af;
+  background: #111827;
+  color: #94a3b8;
   font-size: 0.8rem;
   font-family: ui-monospace, monospace;
+  border-bottom: 1px solid #1e293b;
 }
 
 .copy-button {
@@ -212,22 +253,23 @@ body {
   gap: 0.35rem;
   padding: 0.25rem 0.6rem;
   font-size: 0.75rem;
-  background: rgba(255, 255, 255, 0.1);
-  color: #e5e7eb;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 0.375rem;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 .copy-button:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(16, 185, 129, 0.25);
   color: #ffffff;
+  border-color: rgba(16, 185, 129, 0.5);
 }
 
 .prose pre {
   margin: 0 !important;
   padding: 1.25rem !important;
-  background: #1e1e1e !important;
+  background: #0b1120 !important;
   overflow-x: auto;
 }
 .prose pre code {
@@ -244,16 +286,4 @@ body {
   color: var(--accent-color) !important;
   font-weight: 600;
   border-left-color: var(--accent-color) !important;
-}
-
-/* Custom card hover effect */
-.hover-card {
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.hover-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.12);
-}
-.dark .hover-card:hover {
-  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.5);
 }

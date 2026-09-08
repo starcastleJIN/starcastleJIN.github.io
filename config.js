@@ -1,17 +1,19 @@
 /**
  * 사이트 기본 정보 및 개인 프로필 설정
- * 사용자의 정보에 맞게 이 파일의 내용을 자유롭게 수정하세요.
+ * starcastleJIN 님의 취향과 인터뷰 결과에 맞게 구성된 설정 파일입니다.
  */
 const SITE_CONFIG = {
   // 기본 프로필 정보
   profile: {
     name: "starcastleJIN",
-    role: "Developer & Creator",
-    bio: "기술로 일상의 문제를 해결하고 지식을 기록하는 개발자입니다. 깔끔한 코드와 가치 있는 프로덕트를 지향합니다.",
+    role: "Developer & Problem Solver",
+    tagline: "호기심을 코드로 엮고, 가치를 프로덕트로 증명합니다.",
+    bio: "기술로 일상의 불편을 해결하고 배운 것을 꾸준히 기록하는 개발자입니다. 간결한 구조, 높은 가독성, 편안한 사용자 경험을 추구합니다.",
     avatar: "https://github.com/starcastleJIN.png", // GitHub 프로필 이미지 자동 연동
     location: "Seoul, Republic of Korea",
     email: "jsgyu0223@gmail.com",
     githubUsername: "starcastleJIN",
+    statusText: "Open to Collaborate & Chat"
   },
 
   // 소셜 및 링크
@@ -19,23 +21,43 @@ const SITE_CONFIG = {
     github: "https://github.com/starcastleJIN",
     linkedin: "", // 필요시 입력 (예: https://linkedin.com/in/아이디)
     twitter: "",
-    instagram: "",
     email: "mailto:jsgyu0223@gmail.com",
   },
+
+  // 벤토 위젯 1: 현재 집중해서 공부/개발 중인 기술 (Currently Hacking & Learning)
+  currentlyLearning: {
+    title: "Currently Hacking & Exploring",
+    status: "Active Learning",
+    items: [
+      { name: "Agentic AI & MCP", desc: "AI 에이전트 오케스트레이션 및 MCP 프로토콜 연구" },
+      { name: "Modern Web Performance", desc: "Core Web Vitals 최적화 및 정적 사이트 경량화" },
+      { name: "Clean Architecture", desc: "유지보수성 높은 프론트엔드 모듈 설계 패턴" }
+    ]
+  },
+
+  // 벤토 위젯 2: 개발 철학 (Developer Philosophy)
+  philosophy: [
+    { number: "01", title: "기록의 힘", desc: "기록하지 않은 고민은 휘발되지만, 기록된 해결책은 자산이 된다." },
+    { number: "02", title: "단순함의 미학", desc: "가장 좋은 코드는 불필요한 복잡성이 걷어내어진 명확한 코드다." },
+    { number: "03", title: "사용자 중심", desc: "기술은 목적이 아닌 수단이며, 결국 사용자의 경험을 위해 존재한다." }
+  ],
 
   // 기술 스택 (Skills)
   skills: [
     {
       category: "Frontend",
-      items: ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript", "React", "Tailwind CSS"]
+      color: "emerald",
+      items: ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript", "React", "Tailwind CSS", "Next.js"]
     },
     {
-      category: "Backend",
-      items: ["Node.js", "Express", "Python", "PostgreSQL", "REST API"]
+      category: "Backend & Cloud",
+      color: "teal",
+      items: ["Node.js", "Express", "Python", "FastAPI", "PostgreSQL", "GitHub Pages"]
     },
     {
-      category: "DevOps & Tools",
-      items: ["Git", "GitHub Actions", "Docker", "VS Code", "Vercel"]
+      category: "Tools & Workflow",
+      color: "cyan",
+      items: ["Git & GitHub", "VS Code", "Docker", "Model Context Protocol (MCP)", "Vercel"]
     }
   ],
 
@@ -44,7 +66,7 @@ const SITE_CONFIG = {
     {
       id: "project-1",
       title: "AI 기반 스마트 북마크 매니저",
-      description: "웹 브라우저에서 저장한 방대한 링크를 AI가 카테고리별로 자동 분류하고 요약해 주는 생산성 서비스입니다.",
+      description: "웹 브라우저에 저장한 수백 개의 링크를 AI가 카테고리별로 자동 분류하고 요약해 주는 생산성 서비스입니다.",
       thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80",
       tags: ["React", "TypeScript", "Tailwind CSS", "OpenAI API", "Node.js"],
       demoUrl: "https://starcastlejin.github.io",
@@ -54,7 +76,7 @@ const SITE_CONFIG = {
     {
       id: "project-2",
       title: "실시간 협업 마크다운 에디터",
-      description: "Websocket 기술을 활용하여 여러 사용자가 동시에 하나의 문서를 편집하고 미리볼 수 있는 실시간 웹 에디터입니다.",
+      description: "웹소켓 기술을 활용하여 여러 사용자가 동시에 하나의 문서를 편집하고 라이브로 미리볼 수 있는 웹 에디터입니다.",
       thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80",
       tags: ["Vue.js", "Socket.io", "Express", "Tailwind CSS"],
       demoUrl: "https://starcastlejin.github.io",

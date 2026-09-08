@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>포트폴리오 & 기술 블로그</title>
-  <!-- Google Search / SEO Meta Tags -->
-  <meta name="description" content="개발자 포트폴리오 및 기술 블로그입니다. 웹 개발, 프로젝트, 기술 이야기.">
-  <meta property="og:title" content="포트폴리오 & 기술 블로그">
-  <meta property="og:description" content="개발자 포트폴리오 및 기술 블로그입니다.">
+  <title>starcastleJIN · 포트폴리오 & 기술 블로그</title>
+  <meta name="description" content="starcastleJIN 개발자 포트폴리오 및 기술 블로그입니다. 벤토 그리드 디자인과 마크다운 기술 노트.">
+  <meta property="og:title" content="starcastleJIN · 포트폴리오 & 기술 블로그">
+  <meta property="og:description" content="호기심을 코드로 엮고, 가치를 프로덕트로 증명합니다.">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -18,10 +17,10 @@
         extend: {
           colors: {
             brand: {
-              50: '#eff6ff',
-              500: '#3b82f6',
-              600: '#2563eb',
-              700: '#1d4ed8',
+              50: '#ecfdf5',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
             }
           }
         }
@@ -29,10 +28,10 @@
     }
   </script>
 
-  <!-- Custom Stylesheet -->
+  <!-- Custom Stylesheet (Emerald & Teal Bento Archetype) -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 flex flex-col min-h-screen selection:bg-blue-500 selection:text-white">
+<body class="bg-slate-50 text-slate-900 dark:bg-[#090d16] dark:text-slate-100 flex flex-col min-h-screen selection:bg-emerald-500 selection:text-white">
 
   <!-- =========================================================================
        Navigation Header
@@ -40,22 +39,21 @@
   <header class="sticky top-0 z-50 header-glass">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       <!-- Logo / Site Name -->
-      <a href="index.html" class="flex items-center gap-2 text-lg font-extrabold tracking-tight text-slate-900 dark:text-white group">
-        <span class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-mono font-bold shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform">
+      <a href="index.html" class="flex items-center gap-2.5 text-base sm:text-lg font-extrabold tracking-tight text-slate-900 dark:text-white group">
+        <span class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-mono font-bold shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform">
           &lt;/&gt;
         </span>
-        <span class="site-author-name">Portfolio</span>
+        <span class="site-author-name">starcastleJIN</span>
       </a>
 
       <!-- Desktop Nav Links -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600 dark:text-slate-300">
-        <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">소개</a>
-        <a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">기술 스택</a>
-        <a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">프로젝트</a>
-        <a href="#experience" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">이력</a>
-        <a href="blog.html" class="flex items-center gap-1.5 text-blue-600 dark:text-blue-400 font-semibold hover:underline">
-          블로그
-          <span class="px-1.5 py-0.5 text-[10px] bg-blue-100 dark:bg-blue-900/60 rounded-full font-bold">New</span>
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a href="#about" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">소개 &amp; 스택</a>
+        <a href="#projects" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">프로젝트</a>
+        <a href="#experience" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">이력</a>
+        <a href="blog.html" class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-semibold hover:underline">
+          기술 블로그
+          <span class="px-1.5 py-0.5 text-[10px] bg-emerald-100 dark:bg-emerald-950/80 rounded-full font-bold">New</span>
         </a>
       </nav>
 
@@ -67,7 +65,7 @@
         </button>
 
         <!-- GitHub Icon Link -->
-        <a href="#" target="_blank" rel="noopener noreferrer" class="social-github p-2 rounded-xl text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="GitHub 프로필">
+        <a href="https://github.com/starcastleJIN" target="_blank" rel="noopener noreferrer" class="social-github p-2 rounded-xl text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="GitHub 프로필">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
         </a>
 
@@ -80,223 +78,224 @@
 
     <!-- Mobile Dropdown Menu -->
     <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md space-y-2 text-sm font-medium">
-      <a href="#about" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200">소개</a>
-      <a href="#skills" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200">기술 스택</a>
+      <a href="#about" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200">소개 &amp; 스택</a>
       <a href="#projects" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200">프로젝트</a>
       <a href="#experience" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200">이력</a>
-      <a href="blog.html" class="block px-3 py-2 rounded-lg text-blue-600 dark:text-blue-400 font-semibold hover:bg-blue-50 dark:hover:bg-slate-800">기술 블로그 방문하기 →</a>
+      <a href="blog.html" class="block px-3 py-2 rounded-lg text-emerald-600 dark:text-emerald-400 font-semibold bg-emerald-50 dark:bg-slate-800">기술 블로그 방문하기 →</a>
     </div>
   </header>
 
-  <main class="flex-1">
-    <!-- =========================================================================
-         Hero Section
-         ========================================================================= -->
-    <section class="relative pt-12 pb-20 sm:pt-20 sm:pb-28 overflow-hidden">
-      <!-- Subtle Background Glow -->
-      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-400/10 dark:bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+  <!-- =========================================================================
+       Main Bento Grid Layout (Hallmark Macrostructure)
+       ========================================================================= -->
+  <main class="flex-1 max-w-6xl mx-auto w-full px-4 sm:px-6 py-8 sm:py-12 space-y-8" id="about">
 
-      <div class="max-w-5xl mx-auto px-4 sm:px-6">
-        <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-14">
-          
-          <!-- Hero Text -->
-          <div class="flex-1 text-center md:text-left">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-blue-800/60 mb-6">
-              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span id="hero-role">Frontend & Full Stack Developer</span>
+    <!-- BENTO ROW 1: Hero Profile + Currently Learning -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6">
+      
+      <!-- BENTO CARD 1: Hero Profile & Identity (Span 7) -->
+      <section class="lg:col-span-7 bento-card bento-featured p-6 sm:p-8 flex flex-col justify-between">
+        <div>
+          <!-- Status Pill -->
+          <div class="flex items-center justify-between mb-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+              <span id="hero-status-text">Open to Collaborate &amp; Chat</span>
             </div>
+            <span class="text-xs text-slate-400 flex items-center gap-1 font-mono">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span id="hero-location">Seoul, Korea</span>
+            </span>
+          </div>
 
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15] mb-6">
-              안녕하세요, <br>
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500 dark:from-blue-400 dark:to-indigo-300" id="hero-name">홍길동</span>입니다.
-            </h1>
-
-            <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-xl mx-auto md:mx-0 leading-relaxed mb-8" id="hero-bio">
-              기술로 일상의 문제를 해결하는 것을 즐기는 개발자입니다. 깔끔한 코드와 직관적인 사용자 경험을 지향합니다.
-            </p>
-
-            <!-- CTA Buttons -->
-            <div class="flex flex-wrap items-center justify-center md:justify-start gap-4">
-              <a href="#projects" class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm shadow-lg shadow-blue-500/25 transition-all transform hover:-translate-y-0.5">
-                프로젝트 둘러보기
-              </a>
-              <a href="blog.html" class="px-6 py-3 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold text-sm border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 shadow-sm transition-all transform hover:-translate-y-0.5">
-                기술 블로그 읽기
-              </a>
-              <a href="#contact" class="px-5 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm font-medium transition-colors">
-                연락하기 →
-              </a>
+          <!-- Hero Name & Tagline -->
+          <div class="flex items-center gap-5 mb-5">
+            <img 
+              id="hero-avatar" 
+              src="https://github.com/starcastleJIN.png" 
+              alt="starcastleJIN Avatar" 
+              class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover ring-2 ring-emerald-500/40 shadow-md flex-shrink-0"
+              onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80'"
+            />
+            <div>
+              <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white" id="hero-name">
+                starcastleJIN
+              </h1>
+              <p class="text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400 mt-0.5" id="hero-role">
+                Developer &amp; Problem Solver
+              </p>
             </div>
           </div>
 
-          <!-- Hero Avatar -->
-          <div class="relative">
-            <div class="w-44 h-44 sm:w-56 sm:h-56 rounded-full p-1.5 bg-gradient-to-tr from-blue-600 via-indigo-500 to-teal-400 shadow-2xl">
-              <img 
-                id="hero-avatar" 
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80" 
-                alt="Profile Avatar" 
-                class="w-full h-full object-cover rounded-full bg-white dark:bg-slate-900"
-              />
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         About Me Section
-         ========================================================================= -->
-    <section id="about" class="py-16 bg-white dark:bg-slate-900/50 border-y border-slate-200/80 dark:border-slate-800/80">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-2xl mx-auto mb-12">
-          <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">About Me</h2>
-          <p class="text-3xl font-extrabold text-slate-900 dark:text-white">자기소개</p>
-        </div>
-
-        <div class="bg-slate-50 dark:bg-slate-800/40 rounded-3xl p-8 sm:p-10 border border-slate-200/80 dark:border-slate-800">
-          <p id="about-bio" class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed mb-8">
-            사용자 중심의 가치를 코드로 구현하는 개발자입니다. 복잡한 문제를 단순하고 우아한 구조로 풀어내는 것을 좋아합니다.
+          <p class="text-base sm:text-lg font-bold text-slate-800 dark:text-slate-100 leading-snug mb-3" id="hero-tagline">
+            호기심을 코드로 엮고, 가치를 프로덕트로 증명합니다.
           </p>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-slate-200 dark:border-slate-700/60 text-sm">
-            <div class="flex items-center gap-3 text-slate-700 dark:text-slate-300">
-              <span class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              </span>
-              <div>
-                <span class="block text-xs text-slate-400 font-medium">활동 위치</span>
-                <span id="about-location" class="font-semibold">Seoul, Republic of Korea</span>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-3 text-slate-700 dark:text-slate-300">
-              <span class="p-2 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              </span>
-              <div>
-                <span class="block text-xs text-slate-400 font-medium">이메일 문의</span>
-                <a id="about-email" href="#" class="font-semibold hover:text-blue-600 dark:hover:text-blue-400">your-email@example.com</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         Skills Section
-         ========================================================================= -->
-    <section id="skills" class="py-20">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-2xl mx-auto mb-14">
-          <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Tech Stack</h2>
-          <p class="text-3xl font-extrabold text-slate-900 dark:text-white">보유 기술 및 도구</p>
-          <p class="text-sm text-slate-500 mt-2">지속적으로 학습하고 프로젝트에 적용해온 기술들입니다.</p>
+          <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed" id="hero-bio">
+            기술로 일상의 불편을 해결하고 배운 것을 꾸준히 기록하는 개발자입니다. 간결한 구조, 높은 가독성, 편안한 사용자 경험을 추구합니다.
+          </p>
         </div>
 
-        <div id="skills-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Injected dynamically by portfolio.js -->
+        <!-- Hero Actions -->
+        <div class="flex flex-wrap items-center gap-3 pt-6 mt-6 border-t border-slate-100 dark:border-slate-800/80">
+          <a href="#projects" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm shadow-md shadow-emerald-500/20 transition-all">
+            프로젝트 둘러보기
+          </a>
+          <a href="blog.html" class="px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-semibold text-xs sm:text-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+            기술 블로그 읽기
+          </a>
+          <a href="mailto:jsgyu0223@gmail.com" class="social-email ml-auto text-xs text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 font-medium inline-flex items-center gap-1 transition-colors">
+            메일 보내기 →
+          </a>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- =========================================================================
-         Featured Projects Section
-         ========================================================================= -->
-    <section id="projects" class="py-20 bg-white dark:bg-slate-900/40 border-t border-slate-200/80 dark:border-slate-800/80">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-2xl mx-auto mb-14">
-          <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Portfolio</h2>
-          <p class="text-3xl font-extrabold text-slate-900 dark:text-white">주요 프로젝트</p>
-          <p class="text-sm text-slate-500 mt-2">직접 설계하고 개발한 대표적인 결과물들입니다.</p>
+      <!-- BENTO CARD 2: Currently Hacking & Learning Widget (Span 5) -->
+      <section class="lg:col-span-5 bento-card p-6 sm:p-7 flex flex-col justify-between" id="currently-learning-container">
+        <!-- Injected dynamically by portfolio.js -->
+        <div class="animate-pulse space-y-4">
+          <div class="h-4 bg-slate-200 dark:bg-slate-800 rounded w-1/2"></div>
+          <div class="h-12 bg-slate-100 dark:bg-slate-800/50 rounded-xl"></div>
+          <div class="h-12 bg-slate-100 dark:bg-slate-800/50 rounded-xl"></div>
         </div>
+      </section>
 
-        <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Injected dynamically by portfolio.js -->
-        </div>
-      </div>
-    </section>
+    </div>
 
-    <!-- =========================================================================
-         Recent Blog Posts Section
-         ========================================================================= -->
-    <section class="py-20">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6">
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
+    <!-- BENTO ROW 2: Tech Stack Matrix + Coffee Chat -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6">
+      
+      <!-- BENTO CARD 3: Tech Stack Matrix (Span 8) -->
+      <section class="lg:col-span-8 bento-card p-6 sm:p-8">
+        <div class="flex items-center justify-between mb-5">
           <div>
-            <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Latest Insights</h2>
-            <p class="text-3xl font-extrabold text-slate-900 dark:text-white">최신 블로그 글</p>
+            <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Capabilities</span>
+            <h2 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mt-0.5">Tech Stack Matrix</h2>
           </div>
-          <a href="blog.html" class="text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1">
-            블로그 전체 글 보기 →
-          </a>
+          <span class="text-xs text-slate-400 font-mono hidden sm:inline">Hands-on experience</span>
         </div>
 
-        <div id="recent-posts-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div id="bento-skills-container" class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
           <!-- Injected dynamically by portfolio.js -->
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- =========================================================================
-         Experience & Timeline Section
-         ========================================================================= -->
-    <section id="experience" class="py-20 bg-white dark:bg-slate-900/40 border-t border-slate-200/80 dark:border-slate-800/80">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-2xl mx-auto mb-14">
-          <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Career & Activities</h2>
-          <p class="text-3xl font-extrabold text-slate-900 dark:text-white">경력 및 활동</p>
+      <!-- BENTO CARD 4: Coffee Chat & Quick Connect Widget (Span 4) -->
+      <section class="lg:col-span-4 bento-card p-6 sm:p-7 flex flex-col justify-between bg-gradient-to-br from-emerald-500/5 via-transparent to-teal-500/5">
+        <div>
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </div>
+          <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-2">Coffee Chat &amp; Connect</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+            사이드 프로젝트 협업, 기술 문의, 혹은 가벼운 커피챗 모두 환영합니다. 편하게 메시지를 남겨주세요.
+          </p>
         </div>
 
-        <div id="experience-container">
-          <!-- Injected dynamically by portfolio.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         Contact Section
-         ========================================================================= -->
-    <section id="contact" class="py-20 bg-gradient-to-b from-transparent to-blue-50/50 dark:to-blue-950/20 border-t border-slate-200/80 dark:border-slate-800/80">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-        <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Get In Touch</h2>
-        <p class="text-3xl font-extrabold text-slate-900 dark:text-white mb-4">함께 일하고 이야기 나눠요</p>
-        <p class="text-slate-600 dark:text-slate-300 mb-8 max-w-md mx-auto text-sm sm:text-base leading-relaxed">
-          새로운 프로젝트 협업, 기술 문의, 혹은 커피챗 모두 환영합니다. 편하게 연락주세요!
-        </p>
-
-        <div class="flex flex-wrap justify-center items-center gap-4">
-          <a href="mailto:your-email@example.com" class="social-email inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm shadow-md transition-all">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            이메일 보내기
+        <div class="space-y-2.5 pt-4 border-t border-slate-100 dark:border-slate-800">
+          <a 
+            href="mailto:jsgyu0223@gmail.com" 
+            class="social-email w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold flex items-center justify-center gap-2 transition-colors shadow-sm"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            이메일로 문의하기
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="social-github inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white dark:bg-slate-800 dark:hover:bg-slate-700 font-semibold text-sm transition-all">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          <a 
+            href="https://github.com/starcastleJIN" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="social-github w-full py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-semibold flex items-center justify-center gap-2 transition-colors"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
             GitHub 팔로우
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="social-linkedin inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-semibold text-sm transition-all">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-            LinkedIn
-          </a>
         </div>
+      </section>
+
+    </div>
+
+    <!-- BENTO ROW 3: Developer Philosophy (Span 12) -->
+    <section class="bento-card p-6 sm:p-8">
+      <div class="mb-5">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Core Values</span>
+        <h2 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mt-0.5">My Principles · 개발 철학</h2>
+      </div>
+      <div id="philosophy-container" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Injected dynamically by portfolio.js -->
       </div>
     </section>
+
+    <!-- BENTO ROW 4: Featured Projects (Span 12) -->
+    <section id="projects" class="space-y-4 pt-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Showcase</span>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">Featured Projects</h2>
+        </div>
+        <span class="text-xs text-slate-400 font-mono">직접 구현한 대표 프로젝트</span>
+      </div>
+
+      <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Injected dynamically by portfolio.js -->
+      </div>
+    </section>
+
+    <!-- BENTO ROW 5: Recent Blog Posts & Career Timeline -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-4">
+      
+      <!-- Recent Posts (Span 7) -->
+      <section class="lg:col-span-7 space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Knowledge</span>
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white">최신 블로그 글</h2>
+          </div>
+          <a href="blog.html" class="text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:underline">
+            전체 글 보기 →
+          </a>
+        </div>
+
+        <div id="recent-posts-container" class="space-y-4">
+          <!-- Injected dynamically by portfolio.js -->
+        </div>
+      </section>
+
+      <!-- Experience / Timeline (Span 5) -->
+      <section id="experience" class="lg:col-span-5 bento-card p-6 sm:p-7 flex flex-col justify-between">
+        <div>
+          <div class="mb-6">
+            <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Journey</span>
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white mt-0.5">경력 및 활동</h2>
+          </div>
+
+          <div id="experience-container">
+            <!-- Injected dynamically by portfolio.js -->
+          </div>
+        </div>
+
+        <p class="text-xs text-slate-400 pt-6 border-t border-slate-100 dark:border-slate-800 mt-6">
+          지속적으로 새로운 기술을 탐구하고 기록합니다.
+        </p>
+      </section>
+
+    </div>
+
   </main>
 
   <!-- =========================================================================
        Footer
        ========================================================================= -->
-  <footer class="border-t border-slate-200 dark:border-slate-800 py-8 text-center text-xs text-slate-500 dark:text-slate-400">
+  <footer class="border-t border-slate-200 dark:border-slate-800 py-8 text-center text-xs text-slate-500 dark:text-slate-400 mt-12">
     <div class="max-w-6xl mx-auto px-4">
-      <p>© <span id="current-year"></span> <span id="footer-author">Developer</span>. All rights reserved.</p>
-      <p class="mt-1 text-slate-400 dark:text-slate-500">Hosted on GitHub Pages • Built with HTML, Tailwind CSS & JS</p>
+      <p>© <span id="current-year"></span> <span id="footer-author">starcastleJIN</span>. All rights reserved.</p>
+      <p class="mt-1 text-slate-400 dark:text-slate-500 font-mono text-[11px]">
+        Designed with Hallmark Bento Grid Archetype • Emerald &amp; Teal Edition
+      </p>
     </div>
   </footer>
 
   <!-- Scroll To Top Floating Button -->
-  <button id="scroll-to-top" type="button" class="fixed bottom-6 right-6 p-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg opacity-0 pointer-events-none transition-all duration-300 z-40" aria-label="맨 위로 가기">
+  <button id="scroll-to-top" type="button" class="fixed bottom-6 right-6 p-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg opacity-0 pointer-events-none transition-all duration-300 z-40" aria-label="맨 위로 가기">
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
   </button>
 

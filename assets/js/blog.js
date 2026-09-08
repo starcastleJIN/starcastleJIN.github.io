@@ -65,7 +65,7 @@ function renderTagFilters() {
         data-tag="${escapeHTML(tag)}" 
         class="tag-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all ${
           isActive
-            ? "bg-blue-600 text-white shadow-sm"
+            ? "bg-emerald-600 text-white shadow-sm"
             : "bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300"
         }"
       >
@@ -132,7 +132,7 @@ function renderFilteredPosts() {
     <article class="bg-white dark:bg-slate-800/80 rounded-2xl p-6 sm:p-7 border border-slate-200 dark:border-slate-800 shadow-sm hover-card flex flex-col justify-between">
       <div>
         <div class="flex items-center gap-2.5 text-xs text-slate-500 dark:text-slate-400 mb-3">
-          <span class="px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 font-semibold">
+          <span class="px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 font-semibold">
             ${escapeHTML(post.category || "General")}
           </span>
           <span>•</span>
@@ -141,7 +141,7 @@ function renderFilteredPosts() {
           <span>${escapeHTML(post.readingTime || "3 min read")}</span>
         </div>
 
-        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-3 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
           <a href="post.html?id=${encodeURIComponent(post.slug)}">
             ${escapeHTML(post.title)}
           </a>
@@ -163,7 +163,7 @@ function renderFilteredPosts() {
 
         <a 
           href="post.html?id=${encodeURIComponent(post.slug)}" 
-          class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 group"
+          class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 group"
         >
           글 읽기 
           <span class="transform group-hover:translate-x-1 transition-transform">→</span>
@@ -294,7 +294,7 @@ function setupHeadingsAndTOC(container) {
       <li>
         <a 
           href="#${h.id}" 
-          class="toc-item block py-1 text-slate-500 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-colors ${indentClass}"
+          class="toc-item block py-1 text-slate-500 hover:text-emerald-600 dark:text-slate-400 dark:hover:text-emerald-400 transition-colors ${indentClass}"
         >
           ${escapeHTML(text)}
         </a>
@@ -384,12 +384,12 @@ function renderPostPagination(currentIndex) {
           ? `
           <a 
             href="post.html?id=${encodeURIComponent(prevPost.slug)}"
-            class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-blue-500/50 dark:hover:border-blue-500/50 bg-white dark:bg-slate-800/60 transition-all flex flex-col group"
+            class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 bg-white dark:bg-slate-800/60 transition-all flex flex-col group"
           >
-            <span class="text-xs text-slate-400 mb-1 flex items-center gap-1 group-hover:text-blue-500">
+            <span class="text-xs text-slate-400 mb-1 flex items-center gap-1 group-hover:text-emerald-500">
               ← 이전 글
             </span>
-            <span class="font-bold text-slate-800 dark:text-white line-clamp-1 group-hover:text-blue-600 dark:group-hover:text-blue-400">
+            <span class="font-bold text-slate-800 dark:text-white line-clamp-1 group-hover:text-emerald-600 dark:group-hover:text-emerald-400">
               ${escapeHTML(prevPost.title)}
             </span>
           </a>
@@ -401,12 +401,12 @@ function renderPostPagination(currentIndex) {
           ? `
           <a 
             href="post.html?id=${encodeURIComponent(nextPost.slug)}"
-            class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-blue-500/50 dark:hover:border-blue-500/50 bg-white dark:bg-slate-800/60 transition-all flex flex-col text-right group sm:ml-auto w-full"
+            class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 bg-white dark:bg-slate-800/60 transition-all flex flex-col text-right group sm:ml-auto w-full"
           >
-            <span class="text-xs text-slate-400 mb-1 flex items-center justify-end gap-1 group-hover:text-blue-500">
+            <span class="text-xs text-slate-400 mb-1 flex items-center justify-end gap-1 group-hover:text-emerald-500">
               다음 글 →
             </span>
-            <span class="font-bold text-slate-800 dark:text-white line-clamp-1 group-hover:text-blue-600 dark:group-hover:text-blue-400">
+            <span class="font-bold text-slate-800 dark:text-white line-clamp-1 group-hover:text-emerald-600 dark:group-hover:text-emerald-400">
               ${escapeHTML(nextPost.title)}
             </span>
           </a>
@@ -424,7 +424,7 @@ function showPostError(msg) {
       <div class="text-center py-20">
         <h2 class="text-2xl font-bold text-slate-800 dark:text-white mb-2">글을 찾을 수 없습니다</h2>
         <p class="text-slate-500 dark:text-slate-400 mb-6">${escapeHTML(msg)}</p>
-        <a href="blog.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors">
+        <a href="blog.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 text-white rounded-lg text-sm font-semibold hover:bg-emerald-700 transition-colors">
           블로그 목록으로 돌아가기
         </a>
       </div>
