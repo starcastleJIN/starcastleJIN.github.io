@@ -91,7 +91,7 @@
   <main class="flex-1 max-w-6xl mx-auto w-full px-4 sm:px-6 py-8 sm:py-12 space-y-8" id="about">
 
     <!-- BENTO ROW 1: Hero Profile + Currently Learning -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6">
+    <div id="profile-section" class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 scroll-mt-24">
       
       <!-- BENTO CARD 1: Hero Profile & Identity (Span 7) -->
       <section class="lg:col-span-7 bento-card bento-featured p-6 sm:p-8 flex flex-col justify-between">
@@ -163,7 +163,7 @@
     </div>
 
     <!-- BENTO ROW 2: Tech Stack Matrix + Coffee Chat -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6">
+    <div id="skills-section" class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 scroll-mt-24">
       
       <!-- BENTO CARD 3: Tech Stack Matrix (Span 8) -->
       <section class="lg:col-span-8 bento-card p-6 sm:p-8">
@@ -215,7 +215,7 @@
     </div>
 
     <!-- BENTO ROW 3: Developer Philosophy (Span 12) -->
-    <section class="bento-card p-6 sm:p-8">
+    <section id="philosophy-section" class="bento-card p-6 sm:p-8 scroll-mt-24">
       <div class="mb-5">
         <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Core Values</span>
         <h2 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mt-0.5">My Principles · 개발 철학</h2>
@@ -226,7 +226,7 @@
     </section>
 
     <!-- BENTO ROW 4: Featured Projects (Span 12) -->
-    <section id="projects" class="space-y-4 pt-4">
+    <section id="projects" class="space-y-4 pt-4 scroll-mt-24">
       <div class="flex items-center justify-between">
         <div>
           <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Showcase</span>
@@ -244,7 +244,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-4">
       
       <!-- Recent Posts (Span 7) -->
-      <section class="lg:col-span-7 space-y-4">
+      <section id="knowledge-section" class="lg:col-span-7 space-y-4 scroll-mt-24">
         <div class="flex items-center justify-between">
           <div>
             <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Knowledge</span>
@@ -283,6 +283,11 @@
   </main>
 
   <!-- =========================================================================
+       Hallmark Floating Scroll Tracker (Right Sticky Section Focus Navigator)
+       ========================================================================= -->
+  <aside id="floating-scroll-tracker" class="floating-scroll-tracker" aria-label="섹션 네비게이션 트래커"></aside>
+
+  <!-- =========================================================================
        Footer
        ========================================================================= -->
   <footer class="border-t border-slate-200 dark:border-slate-800 py-8 text-center text-xs text-slate-500 dark:text-slate-400 mt-12">
@@ -300,8 +305,9 @@
   </button>
 
   <!-- Core Scripts -->
-  <script src="config.js?v=20260908_3"></script>
-  <script src="assets/js/main.js?v=20260908_3"></script>
-  <script src="assets/js/portfolio.js?v=20260908_3"></script>
+  <script src="config.js?v=20260908_4"></script>
+  <script src="assets/js/main.js?v=20260908_4"></script>
+  <script src="assets/js/portfolio.js?v=20260908_4"></script>
+  <script src="assets/js/scroll-tracker.js?v=20260908_4"></script>
 </body>
 </html>
