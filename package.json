@@ -6,7 +6,10 @@
     "start": "node server.js",
     "dev": "node server.js",
     "new-post": "node scripts/new-post.js",
-    "deploy": "node scripts/deploy.js"
+    "deploy": "node scripts/deploy.js",
+    "audit:perf": "npx lighthouse http://localhost:3000 --view --output=html",
+    "audit:a11y": "npx @axe-core/cli http://localhost:3000",
+    "format": "npx prettier --write \"**/*.{html,css,js,json,md}\""
   },
   "keywords": ["portfolio", "blog", "github-pages", "markdown"],
   "author": "",
