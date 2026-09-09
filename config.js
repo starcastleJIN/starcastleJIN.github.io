@@ -25,36 +25,43 @@ const SITE_CONFIG = {
     blog: "https://power-n-life.tistory.com" // 티스토리 블로그 (로그 & 라이프 아카이브)
   },
 
-  // 벤토 위젯 1: 핵심 경력 요약 (Core Milestones & Verified Highlights)
+  // 벤토 위젯 1: 핵심 역량 & 실적 요약 (Core Milestones & Verified Skills)
   coreHighlights: {
     title: "Core Milestones",
-    subtitle: "핵심 경력 한눈에 보기",
+    subtitle: "핵심 역량 & 실적 요약",
     status: "Verified",
     items: [
       {
         badge: "Degree",
-        name: "전기공학 공학석사 (M.S.)",
-        desc: "한남대학교 일반대학원 전력전자 및 모터제어 연구실 (지도교수: 최종원)"
+        title: "전기공학 공학석사 (M.S.)",
+        highlight: "전력전자 & 모터제어 전공",
+        skills: ["전력전자", "모터제어", "석사학위"]
       },
       {
         badge: "SCI 1저자",
-        name: "IEEE Access 국제저널 논문 게재 (2024)",
-        desc: "Flyback R2CD 스너버 서지/손실 비용함수 최적 수식 모델링 및 56W 하드웨어 실증 (DOI: 10.1109/ACCESS.2024.3458191)"
+        title: "IEEE Access 게재 (2024)",
+        highlight: "R2CD 스너버 최적 수식 모델링",
+        doi: "10.1109/ACCESS.2024.3458191",
+        skills: ["Flyback SMPS", "스너버 최적화", "56W 하드웨어"]
       },
       {
         badge: "KCI 1저자",
-        name: "전력전자학회논문지 등재 (2025.06)",
-        desc: "IPMSM 센서리스 고부하 기동 속도 진동 저감을 위한 I-f 제어 능동 댐핑 알고리즘 (DOI: 10.6113/TKPE.2025.30.3.215)"
+        title: "전력전자학회지 등재 (2025)",
+        highlight: "IPMSM 센서리스 댐핑 알고리즘",
+        doi: "10.6113/TKPE.2025.30.3.215",
+        skills: ["IPMSM", "I-f 센서리스", "능동 댐핑 제어"]
       },
       {
-        badge: "Projects",
-        name: "10kW EV 급속 충전 UNIT & 16k RPM 인버터",
-        desc: "Vienna+LLC+Flyback 전력변환 장치 및 반도체 진공펌프 TI C2000 DSP 펌웨어 직접 구현"
+        badge: "HW 실증",
+        title: "10kW EV & 16,000 RPM",
+        highlight: "급속충전 UNIT & 진공펌프 인버터",
+        skills: ["Vienna Rectifier", "LLC 공진", "16,000 RPM"]
       },
       {
-        badge: "Honors",
-        name: "HCS 메가시티 경진대회 장려상 & HNU 동상",
-        desc: "산업체 연계 배터리 충전 전력변환 시스템 개발 및 알고리즘 구현 (2023)"
+        badge: "DSP & SW",
+        title: "TI C2000 DSP 펌웨어 직접 개발",
+        highlight: "레지스터/인터럽트 직접 구현",
+        skills: ["TMS320F28377D", "Embedded C", "CAN 통신"]
       }
     ]
   },
@@ -137,16 +144,22 @@ const SITE_CONFIG = {
   // 경력 및 활동 이력 (Experience & Activities)
   experiences: [
     {
-      period: "2024 - 현재",
-      role: "소프트웨어 엔지니어 / 개발자",
-      organization: "Tech Projects",
-      description: "웹 애플리케이션 개발 및 사용자 경험 개선, 오픈소스 및 사이드 프로젝트 진행."
+      period: "2022.09 - 2024.08",
+      role: "석사 연구원 (M.S. Researcher)",
+      organization: "한남대학교 일반대학원 전력전자 및 모터제어 연구실",
+      description: "10kW EV 급속 충전 UNIT(Vienna+LLC) DSP 제어보드 설계 및 펌웨어 개발, 반도체 진공펌프용 IPMSM 센서리스 인버터(16,000 RPM) 개발. IEEE Access(SCI) 및 전력전자학회지(KCI) 1저자 논문 게재."
     },
     {
-      period: "2023 - 2024",
-      role: "프론트엔드 개발 / 스터디 리드",
-      organization: "Developer Community",
-      description: "모던 웹 기술 스터디 리드 및 프로젝트 협업 진행, 다양한 기술 블로그 아티클 작성."
+      period: "2023.05 - 2023.11",
+      role: "산학 프로젝트 연구원",
+      organization: "현대자동차(HMC) 기술용역 산학협력",
+      description: "차량용 저전압 벅 컨버터 구동 및 주파수 디더링(Frequency Dithering) 알고리즘 설계를 통한 전도/방사 EMI 스위칭 노이즈 저감 연구 수행."
+    },
+    {
+      period: "2023.03 - 2023.12",
+      role: "팀장 & SW 엔지니어",
+      organization: "HCS 메가시티 실전문제연구단 (사랑의 배터리)",
+      description: "산업체 연계 배터리 충전용 전력변환 시스템 개발. PLECS ZVS 시뮬레이션 및 순수 C언어 레지스터 제어 펌웨어 직접 구현 (연합경진대회 장려상 & HNU 캡스톤 동상 수상)."
     }
   ]
 };

@@ -46,42 +46,60 @@ function renderBentoHero() {
   if (locationEl) locationEl.textContent = profile.location;
 }
 
-// 2. 벤토 위젯: Currently Hacking & Learning
+// 2. 벤토 위젯: Core Milestones & Verified Skills
 function renderCurrentlyLearning() {
   const data = SITE_CONFIG.coreHighlights || SITE_CONFIG.currentlyLearning;
   const container = document.getElementById("currently-learning-container");
   if (!container || !data) return;
 
   const listHtml = data.items.map((item) => `
-    <li class="flex items-start gap-3 p-2 sm:p-2.5 rounded-xl hover:bg-slate-100/70 dark:hover:bg-slate-800/50 transition-colors">
-      <div class="mt-0.5 flex-shrink-0">
-        <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20 font-mono">
-          ${escapeHTML(item.badge || "Key")}
-        </span>
+    <li class="p-2.5 sm:p-3 rounded-xl bg-slate-50/80 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800/80 hover:border-emerald-500/30 transition-all">
+      <div class="flex items-center justify-between gap-2">
+        <div class="flex items-center gap-2">
+          <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-extrabold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20 font-mono flex-shrink-0">
+            ${escapeHTML(item.badge || "Key")}
+          </span>
+          <strong class="text-slate-900 dark:text-slate-100 font-bold text-xs sm:text-sm leading-snug">
+            ${escapeHTML(item.title || item.name)}
+          </strong>
+        </div>
+        ${item.doi ? `
+          <a href="https://doi.org/${encodeURIComponent(item.doi)}" target="_blank" rel="noopener noreferrer" class="px-1.5 py-0.5 rounded bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-[10px] font-mono font-bold transition-colors inline-flex items-center gap-0.5 flex-shrink-0" title="DOI 공식 원문 확인">
+            DOI ↗
+          </a>
+        ` : ''}
       </div>
-      <div class="flex-1 min-w-0">
-        <strong class="text-slate-900 dark:text-slate-100 font-bold text-xs sm:text-sm block leading-snug">${escapeHTML(item.name)}</strong>
-        <p class="text-slate-600 dark:text-slate-400 text-xs mt-1 leading-relaxed">${escapeHTML(item.desc)}</p>
+      ${item.highlight ? `
+        <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mt-1 leading-snug">
+          ${escapeHTML(item.highlight)}
+        </p>
+      ` : ''}
+      <div class="flex flex-wrap items-center gap-1.5 mt-2">
+        ${(item.skills || []).map((skill) => `
+          <span class="px-2 py-0.5 text-[10px] sm:text-[11px] font-mono font-medium rounded bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60 shadow-2xs">
+            #${escapeHTML(skill)}
+          </span>
+        `).join("")}
       </div>
     </li>
   `).join("");
 
   container.innerHTML = `
-    <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100 dark:border-slate-800">
+    <div class="flex items-center justify-between mb-3 pb-3 border-b border-slate-100 dark:border-slate-800">
       <div class="flex items-center gap-2.5">
         <span class="p-1.5 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </span>
         <div>
           <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-none">${escapeHTML(data.title || "Core Milestones")}</h3>
-          <span class="text-[11px] text-slate-400 font-medium">${escapeHTML(data.subtitle || "핵심 경력 한눈에 보기")}</span>
+          <span class="text-[11px] text-slate-400 font-medium">${escapeHTML(data.subtitle || "핵심 역량 & 실적 요약")}</span>
         </div>
       </div>
       <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 font-bold">
         ${escapeHTML(data.status || "Verified")}
       </span>
     </div>
-    <ul class="space-y-1.5">
+    <ul class="space-y-2">
       ${listHtml}
     </ul>
   `;

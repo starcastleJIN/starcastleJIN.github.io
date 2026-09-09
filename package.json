@@ -9,9 +9,21 @@
     "deploy": "node scripts/deploy.js",
     "audit:perf": "npx lighthouse http://localhost:3000 --view --output=html",
     "audit:a11y": "npx @axe-core/cli http://localhost:3000",
-    "format": "npx prettier --write \"**/*.{html,css,js,json,md}\""
+    "format": "npx prettier --write \"**/*.{html,css,js,json,md}\"",
+    "tistory:convert": "node Tstory_/scripts/md_to_tistory_html.js",
+    "tistory:draft": "node Tstory_/scripts/upload_draft.js",
+    "tistory:auto": "node Tstory_/scripts/tistory_auto_manager.js all",
+    "tistory:cdp": "node Tstory_/scripts/cdp_tistory_operator.js all"
   },
-  "keywords": ["portfolio", "blog", "github-pages", "markdown"],
+  "keywords": [
+    "portfolio",
+    "blog",
+    "github-pages",
+    "markdown"
+  ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.63.0"
+  }
 }
