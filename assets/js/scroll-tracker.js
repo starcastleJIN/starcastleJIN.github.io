@@ -12,7 +12,7 @@
     { id: "skills-section", title: "02. Tech Stack" },
     { id: "philosophy-section", title: "03. Philosophy" },
     { id: "projects", title: "04. Projects" },
-    { id: "career-connect-section", title: "05. Career", subTitle: "& Connect" }
+    { id: "experience", title: "05. Career" }
   ];
 
   function initFloatingTracker() {

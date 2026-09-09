@@ -118,12 +118,106 @@
     });
   }
 
+  // 5. 플로팅 커넥트 허브 (RnDcircle 스타일 빠른 문의 & 모달)
+  function initConnectHub() {
+    const btn = document.getElementById("connect-floating-btn");
+    const modal = document.getElementById("connect-modal");
+    const closeBtn = document.getElementById("close-connect-modal");
+    const tooltip = document.getElementById("connect-tooltip");
+    const closeTooltipBtn = document.getElementById("close-connect-tooltip");
+    const chatIcon = document.getElementById("connect-btn-icon-chat");
+    const closeIcon = document.getElementById("connect-btn-icon-close");
+    const copyBtn = document.getElementById("copy-email-btn");
+    const copyText = document.getElementById("copy-email-text");
+    const heroChatTriggers = document.querySelectorAll(".trigger-connect-modal");
+
+    if (!btn || !modal) return;
+
+    function toggleModal(show) {
+      const isOpen = modal.classList.contains("opacity-100");
+      const nextState = show !== undefined ? show : !isOpen;
+
+      if (nextState) {
+        modal.classList.remove("opacity-0", "pointer-events-none", "translate-y-4", "scale-95");
+        modal.classList.add("opacity-100", "pointer-events-auto", "translate-y-0", "scale-100");
+        btn.setAttribute("aria-expanded", "true");
+        if (chatIcon) chatIcon.classList.add("hidden");
+        if (closeIcon) closeIcon.classList.remove("hidden");
+        if (tooltip) tooltip.classList.add("hidden");
+      } else {
+        modal.classList.add("opacity-0", "pointer-events-none", "translate-y-4", "scale-95");
+        modal.classList.remove("opacity-100", "pointer-events-auto", "translate-y-0", "scale-100");
+        btn.setAttribute("aria-expanded", "false");
+        if (chatIcon) chatIcon.classList.remove("hidden");
+        if (closeIcon) closeIcon.classList.add("hidden");
+      }
+    }
+
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleModal();
+    });
+
+    heroChatTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleModal(true);
+      });
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleModal(false);
+      });
+    }
+
+    if (closeTooltipBtn && tooltip) {
+      closeTooltipBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        tooltip.style.display = "none";
+      });
+    }
+
+    // Click outside to close
+    document.addEventListener("click", (e) => {
+      if (!modal.contains(e.target) && !btn.contains(e.target)) {
+        toggleModal(false);
+      }
+    });
+
+    // ESC to close
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        toggleModal(false);
+      }
+    });
+
+    // Copy email with feedback
+    if (copyBtn && copyText) {
+      copyBtn.addEventListener("click", async (e) => {
+        e.stopPropagation();
+        try {
+          await navigator.clipboard.writeText("jsgyu0223@gmail.com");
+          copyText.textContent = "복사 완료! ✓";
+          setTimeout(() => {
+            copyText.textContent = "이메일 복사";
+          }, 2000);
+        } catch (err) {
+          copyText.textContent = "jsgyu0223@gmail.com";
+        }
+      });
+    }
+  }
+
   // DOM 로드 시 실행
   document.addEventListener("DOMContentLoaded", () => {
     initTheme();
     initMobileMenu();
     applySiteConfig();
     initScrollToTop();
+    initConnectHub();
 
     // 테마 토글 버튼 이벤트 등록
     document.querySelectorAll(".theme-toggle-btn").forEach((btn) => {
