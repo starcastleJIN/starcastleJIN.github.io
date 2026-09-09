@@ -219,26 +219,109 @@ function renderProjects() {
   `).join("");
 }
 
-// 6. 경력 및 활동 타임라인
+// 6. 경력 및 활동 타임라인 (2-Tier Hierarchical Timeline: 대분류 기관/학위 ➡️ 중분류 세부 프로젝트/연구/수상)
 function renderExperiences() {
   const { experiences } = SITE_CONFIG;
   const container = document.getElementById("experience-container");
   if (!container || !experiences) return;
 
+  const categoryBadgeStyles = {
+    project: "bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border border-emerald-500/30",
+    industry: "bg-blue-100 dark:bg-blue-950/60 text-blue-800 dark:text-blue-300 border border-blue-500/30",
+    research: "bg-purple-100 dark:bg-purple-950/60 text-purple-800 dark:text-purple-300 border border-purple-500/30",
+    award: "bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border border-amber-500/30"
+  };
+
   container.innerHTML = `
-    <div class="relative border-l-2 border-emerald-500/30 ml-3 pl-6 space-y-7">
+    <div class="relative border-l-2 border-emerald-500/40 dark:border-emerald-500/30 ml-3 sm:ml-5 pl-6 sm:pl-8 space-y-12">
       ${experiences.map((exp) => `
-        <div class="relative group">
-          <div class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 bg-emerald-500 rounded-full ring-4 ring-white dark:ring-slate-900 group-hover:scale-125 transition-transform"></div>
-          <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300">
-            ${escapeHTML(exp.period)}
-          </span>
-          <h4 class="text-base font-bold text-slate-900 dark:text-white mt-1.5">
-            ${escapeHTML(exp.role)} <span class="text-slate-400 font-normal">@ ${escapeHTML(exp.organization)}</span>
-          </h4>
-          <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mt-1 leading-relaxed">
-            ${escapeHTML(exp.description)}
-          </p>
+        <div class="relative group/major">
+          <!-- 대분류 노드 (Main Trunk Node) -->
+          <div class="absolute -left-[33px] sm:-left-[41px] top-0.5 w-5 h-5 bg-emerald-600 dark:bg-emerald-500 rounded-full ring-4 ring-white dark:ring-slate-900 shadow-md flex items-center justify-center">
+            <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+          </div>
+
+          <!-- 대분류 헤더 카드 -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-slate-50/80 dark:bg-slate-800/40 border border-slate-200/70 dark:border-slate-800 backdrop-blur-sm transition-colors group-hover/major:border-emerald-500/30">
+            <div class="flex flex-wrap items-center gap-2 mb-2">
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-600 text-white shadow-sm font-mono">
+                ${escapeHTML(exp.period)}
+              </span>
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 border border-emerald-500/20">
+                ${escapeHTML(exp.degree || exp.role || "")}
+              </span>
+            </div>
+
+            <h3 class="text-base sm:text-lg font-black text-slate-900 dark:text-white tracking-tight">
+              ${escapeHTML(exp.organization)}
+            </h3>
+
+            ${exp.subInfo ? `
+              <div class="text-xs sm:text-sm font-semibold text-emerald-700 dark:text-emerald-400 mt-1 flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 flex-shrink-0 opacity-80" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                ${escapeHTML(exp.subInfo)}
+              </div>
+            ` : ""}
+
+            ${exp.summary ? `
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
+                ${escapeHTML(exp.summary)}
+              </p>
+            ` : ""}
+          </div>
+
+          <!-- 중분류 트리 (Inner Sub-branch Timeline) -->
+          ${exp.subItems && exp.subItems.length > 0 ? `
+            <div class="relative border-l-2 border-dashed border-slate-300 dark:border-slate-700/80 ml-2 sm:ml-4 pl-5 sm:pl-6 space-y-6 mt-6">
+              ${exp.subItems.map((item) => `
+                <div class="relative group/item">
+                  <!-- 중분류 노드 (Sub-branch Node) -->
+                  <div class="absolute -left-[27px] sm:-left-[31px] top-1.5 w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-600 ring-4 ring-white dark:ring-slate-900 group-hover/item:bg-emerald-500 group-hover/item:scale-125 transition-all"></div>
+
+                  <!-- 중분류 상세 내용 -->
+                  <div class="bg-white/60 dark:bg-slate-900/40 p-3.5 sm:p-4 rounded-xl border border-slate-200/50 dark:border-slate-800/60 hover:border-emerald-500/30 transition-all">
+                    <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                      <span class="text-[11px] font-bold px-2 py-0.5 rounded-md ${categoryBadgeStyles[item.categoryType] || "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"}">
+                        ${escapeHTML(item.category)}
+                      </span>
+                      <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400 font-medium">
+                        ${escapeHTML(item.period)}
+                      </span>
+                    </div>
+
+                    <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white group-hover/item:text-emerald-600 dark:group-hover/item:text-emerald-400 transition-colors">
+                      ${escapeHTML(item.title)}
+                    </h4>
+
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-1.5 leading-relaxed">
+                      ${escapeHTML(item.description)}
+                    </p>
+
+                    ${(item.tags && item.tags.length > 0) || (item.links && item.links.length > 0) ? `
+                      <div class="flex flex-wrap items-center gap-1.5 mt-3 pt-2.5 border-t border-slate-100 dark:border-slate-800/80">
+                        ${(item.tags || []).map((t) => `
+                          <span class="px-2 py-0.5 text-[10px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded">
+                            #${escapeHTML(t)}
+                          </span>
+                        `).join("")}
+                        ${(item.links || []).map((lnk) => `
+                          <a 
+                            href="${escapeHTML(lnk.url)}" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            class="inline-flex items-center gap-1 px-2 py-0.5 text-[10px] font-semibold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 rounded border border-emerald-500/20 transition-colors"
+                          >
+                            <svg class="w-2.5 h-2.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            ${escapeHTML(lnk.label)}
+                          </a>
+                        `).join("")}
+                      </div>
+                    ` : ""}
+                  </div>
+                </div>
+              `).join("")}
+            </div>
+          ` : ""}
         </div>
       `).join("")}
     </div>

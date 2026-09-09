@@ -141,25 +141,81 @@ const SITE_CONFIG = {
     }
   ],
 
-  // 경력 및 활동 이력 (Experience & Activities)
+  // 경력 및 활동 이력 (2-Tier Hierarchical Timeline: 대분류 기관/학위 ➡️ 중분류 세부 프로젝트/연구/수상)
   experiences: [
     {
+      id: "grad-school",
+      tier: "major",
       period: "2022.09 - 2024.08",
-      role: "석사 연구원 (M.S. Researcher)",
-      organization: "한남대학교 일반대학원 전력전자 및 모터제어 연구실",
-      description: "10kW EV 급속 충전 UNIT(Vienna+LLC) DSP 제어보드 설계 및 펌웨어 개발, 반도체 진공펌프용 IPMSM 센서리스 인버터(16,000 RPM) 개발. IEEE Access(SCI) 및 전력전자학회지(KCI) 1저자 논문 게재."
+      organization: "한남대학교 일반대학원 전기전자공학과",
+      degree: "공학석사 (M.S.)",
+      subInfo: "전력전자 및 모터제어 연구실 (지도교수: 최종원)",
+      summary: "전력변환 회로 토폴로지(Vienna/LLC/Flyback) 해석·설계 및 초고속 IPMSM 센서리스 제어 알고리즘 집중 연구",
+      subItems: [
+        {
+          category: "프로젝트",
+          categoryType: "project",
+          title: "10kW급 EV 급속 충전 스테이션 전력변환 UNIT 개발",
+          period: "2022.09 - 2024.08",
+          description: "3-Level Vienna Rectifier(AC/DC) + Full-Bridge LLC Resonant Converter(DC/DC) 및 50W Flyback SMPS 보조전원 회로 설계. TI TMS320F28377D DSP 제어보드(OrCAD/PADS) 설계 및 C언어 레지스터 기반 인터럽트 최적화 펌웨어(CCS) 직접 구현.",
+          tags: ["TI F28377D", "Vienna Rectifier", "LLC Resonant", "Flyback SMPS", "CAN"]
+        },
+        {
+          category: "프로젝트",
+          categoryType: "project",
+          title: "반도체 진공펌프용 IPMSM 구동 인버터 & 센서리스 제어 SW 개발",
+          period: "2023.01 - 2024.06",
+          description: "고부하 반도체 진공펌프용 AC 모터 인버터 구동. 10초 이내 500 RPM 도달하는 I-f 기동 알고리즘 및 16,000 RPM 초고속 센서리스 제어 안정화 달성. 정전 발생 시 관성 에너지를 회생시켜 DSP 제어보드 전원을 1초 이상 유지하는 무정전 보호 알고리즘 개발.",
+          tags: ["IPMSM", "센서리스 모터제어", "16,000 RPM", "I-f 기동", "무정전 회생제동"]
+        },
+        {
+          category: "산학협력",
+          categoryType: "industry",
+          title: "현대자동차(HMC) 기술용역 차량용 저전압 벅 컨버터 노이즈 저감",
+          period: "2023.05 - 2023.11",
+          description: "차량용 배터리단 저전압 벅 컨버터 구동 및 주파수 디더링(Frequency Dithering) 제어 알고리즘 설계를 통해 특정 스위칭 주파수 대역의 전도/방사 EMI 노이즈 Peak 분산 및 저감 실증.",
+          tags: ["현대자동차", "DC-DC 벅 컨버터", "주파수 디더링", "EMI 노이즈 저감"]
+        },
+        {
+          category: "학술연구",
+          categoryType: "research",
+          title: "국제저널 IEEE Access (SCI 1저자) & 전력전자학회논문지 (KCI 1저자) 게재",
+          period: "2024.09 & 2025.06",
+          description: "플라이백 스너버 댐핑 저항 수식 최적화 모델링(IEEE Access, DOI: 10.1109/ACCESS.2024.3458191) 및 IPMSM 고부하 기동 시 감쇠비 0.707 최적 댐핑 게인 기반 속도 진동 저감 능동 제어(전력전자학회논문지, DOI: 10.6113/TKPE.2025.30.3.215 & 석사학위논문).",
+          tags: ["IEEE Access (SCI)", "전력전자학회지 (KCI)", "석사 학위논문", "R2CD 스너버"],
+          links: [
+            { label: "IEEE Access 원문", url: "https://doi.org/10.1109/ACCESS.2024.3458191" },
+            { label: "KCI 논문지 원문", url: "https://doi.org/10.6113/TKPE.2025.30.3.215" }
+          ]
+        }
+      ]
     },
     {
-      period: "2023.05 - 2023.11",
-      role: "산학 프로젝트 연구원",
-      organization: "현대자동차(HMC) 기술용역 산학협력",
-      description: "차량용 저전압 벅 컨버터 구동 및 주파수 디더링(Frequency Dithering) 알고리즘 설계를 통한 전도/방사 EMI 스위칭 노이즈 저감 연구 수행."
-    },
-    {
-      period: "2023.03 - 2023.12",
-      role: "팀장 & SW 엔지니어",
-      organization: "HCS 메가시티 실전문제연구단 (사랑의 배터리)",
-      description: "산업체 연계 배터리 충전용 전력변환 시스템 개발. PLECS ZVS 시뮬레이션 및 순수 C언어 레지스터 제어 펌웨어 직접 구현 (연합경진대회 장려상 & HNU 캡스톤 동상 수상)."
+      id: "undergrad",
+      tier: "major",
+      period: "2016.03 - 2022.08",
+      organization: "한남대학교 공과대학 전기전자공학과",
+      degree: "공학학사 (B.S.)",
+      subInfo: "전력전자 전공 트랙",
+      summary: "전기전자공학 기초 회로이론, 전력변환 및 마이크로프로세서 제어 기반 구축",
+      subItems: [
+        {
+          category: "경진대회 수상",
+          categoryType: "award",
+          title: "HCS 메가시티 실전문제연구단 연합경진대회 장려상 & HNU 캡스톤디자인 동상",
+          period: "2023.03 - 2023.12",
+          description: "'사랑의 배터리' 팀장으로서 산업체 연계 배터리 충전용 전력변환 시스템 개발 총괄. PLECS 시뮬레이션 기반 ZVS 최적 스위칭 주파수 해석 및 순수 C언어 레지스터 제어 펌웨어 직접 구현.",
+          tags: ["사랑의 배터리 팀장", "배터리 충전기", "PLECS ZVS", "연합경진대회 장려상", "캡스톤 동상"]
+        },
+        {
+          category: "학술발표",
+          categoryType: "research",
+          title: "2023 전력전자학술대회 포스터 발표",
+          period: "2023.07",
+          description: "플라이백 컨버터의 스위칭 서지 전압 저감을 위한 R2CD 스너버 회로 최적 설계 기법 포스터 발표.",
+          tags: ["한국전력전자학회", "포스터 발표", "플라이백 컨버터"]
+        }
+      ]
     }
   ]
 };
