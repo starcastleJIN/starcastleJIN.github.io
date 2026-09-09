@@ -141,7 +141,7 @@ const SITE_CONFIG = {
     {
       id: "wonik-pne",
       tier: "major",
-      period: "2024.09 - 현재",
+      period: "2026.01 - 현재",
       organization: "원익피앤이 (WONIK PNE)",
       degree: "전력 제어 그룹 (Power Control Group)",
       subInfo: "연구원 / 전력전자 제어 엔지니어 (재직 중)",
@@ -151,8 +151,8 @@ const SITE_CONFIG = {
           category: "양산/개발",
           categoryType: "project",
           title: "2차전지 충방전 전력변환 시스템 제어 및 임베디드 펌웨어 개발",
-          period: "2024.09 - 현재",
-          description: "2차전지 제조 공정용 고효율 충방전기(Formation & Cycler) 전력변환 제어 알고리즘 설계 및 펌웨어 구현, 제어 루프 안정성 및 전력 품질 최적화.",
+          period: "2026.01 - 현재",
+          description: "2차전지 제조 공정용 고효율 충방전기(Formation & Cycler) 전력변환 제어 알고리즘 설계 및 DSP 펌웨어 구현, 제어 루프 안정성 및 전력 품질 최적화.",
           tags: ["2차전지", "충방전기", "전력변환제어", "임베디드SW", "WONIK PNE"]
         }
       ]
@@ -160,66 +160,73 @@ const SITE_CONFIG = {
     {
       id: "keti",
       tier: "major",
-      period: "2024",
+      period: "2025.02 - 2025.12",
       organization: "한국전자기술연구원 (KETI)",
       degree: "연구원 (Researcher)",
-      subInfo: "전력변환 및 에너지 제어 시스템 연구",
-      summary: "신재생 에너지 및 산업용 전력변환 시스템 제어 알고리즘 연구 및 회로 토폴로지 해석·검증",
+      subInfo: "전력제어시스템연구센터 (전력전자제어시스템)",
+      summary: "공조용 PMSM 고속 구동 및 차세대 차량용 GaN 3-Level 인버터 특성 해석·하드웨어 실증 연구",
       subItems: [
         {
           category: "연구과제",
           categoryType: "research",
-          title: "전력변환 및 지능형 에너지 제어 시스템 연구",
-          period: "2024",
-          description: "에너지 변환 효율 향상을 위한 전력전자 토폴로지 분석 및 시뮬레이션, 제어 알고리즘 검증 연구 수행.",
-          tags: ["KETI", "전력변환", "에너지제어", "토폴로지해석"]
+          title: "공조용 3kW급 PMSM EC-FAN 개발과제 참여",
+          period: "2025.02 - 2025.12",
+          description: "외륜형 SPMSM을 적용한 3,200 RPM / 8Nm 기동 파형 실증 실험 및 인버터 제어 보드 하드웨어 디버깅 수행.",
+          tags: ["KETI", "PMSM", "EC-FAN", "하드웨어 디버깅", "모터제어"]
+        },
+        {
+          category: "연구과제",
+          categoryType: "research",
+          title: "차량용 3-Level GaN Inverter 개발과제 참여",
+          period: "2025.02 - 2025.12",
+          description: "완성된 기구물 3-Level GaN 인버터 모듈의 스위칭 특성 분석을 위한 Double Pulse Test(DPT) 진행 및 스위칭 노이즈 정밀 측정.",
+          tags: ["KETI", "GaN 전력반도체", "3-Level Inverter", "DPT 테스트", "노이즈 측정"]
         }
       ]
     },
     {
       id: "grad-school",
       tier: "major",
-      period: "2022.09 - 2024.08",
+      period: "2023.03 - 2024.08",
       organization: "한남대학교 일반대학원 전기전자공학과",
       degree: "공학석사 (M.S.)",
       subInfo: "전력전자 및 모터제어 연구실 (지도교수: 최종원)",
       summary: "전력변환 회로 토폴로지(Vienna/LLC/Flyback) 해석·설계 및 초고속 IPMSM 센서리스 제어 알고리즘 집중 연구",
       subItems: [
         {
-          category: "프로젝트",
+          category: "산학 과제",
           categoryType: "project",
-          title: "10kW급 EV 급속 충전 스테이션 전력변환 UNIT 개발",
-          period: "2022.09 - 2024.08",
-          description: "3-Level Vienna Rectifier(AC/DC) + Full-Bridge LLC Resonant Converter(DC/DC) 및 50W Flyback SMPS 보조전원 회로 설계. TI TMS320F28377D DSP 제어보드(OrCAD/PADS) 설계 및 C언어 레지스터 기반 인터럽트 최적화 펌웨어(CCS) 구현 및 검증.",
+          title: "전기차용 30kW급 급속 충전기 개발 과제 (1차년도 10kW 달성)",
+          period: "2022.05 - 2023.02",
+          description: "㈜인피니티웍스 산학 과제. 3-Level Vienna Rectifier(AC/DC) + Full-Bridge LLC Resonant(DC/DC) 및 60W Flyback SMPS 보조전원 회로 설계. TI TMS320F28377D DSP 제어보드(PADs) 및 레지스터 인터럽트 최적화 펌웨어(CCS) 구현.",
           tags: ["TI F28377D", "Vienna Rectifier", "LLC Resonant", "Flyback SMPS", "CAN"]
         },
         {
-          category: "프로젝트",
+          category: "학술발표",
+          categoryType: "research",
+          title: "2023 전력전자학술대회(KIPE) 포스터 발표",
+          period: "2023.07",
+          description: "플라이백 컨버터의 스위칭 서지 전압 저감을 위한 R2CD 스너버 회로 최적 설계 기법 포스터 발표.",
+          tags: ["전력전자학회(KIPE)", "포스터 발표", "플라이백 컨버터", "R2CD 스너버"],
+          links: [
+            { label: "전력전자학회(KIPE) 바로가기", url: "https://www.kipe.or.kr/" }
+          ]
+        },
+        {
+          category: "산학 과제",
           categoryType: "project",
           title: "반도체 진공펌프용 IPMSM 구동 인버터 & 센서리스 제어 SW 개발",
-          period: "2023.01 - 2024.06",
-          description: "고부하 반도체 진공펌프용 AC 모터 인버터 구동. 10초 이내 500 RPM 도달하는 I-f 기동 알고리즘 및 16,000 RPM 초고속 센서리스 제어 안정화 달성. 정전 발생 시 관성 에너지를 회생시켜 DSP 제어보드 전원을 1초 이상 유지하는 무정전 보호 알고리즘 개발.",
+          period: "2024.01 - 2024.08",
+          description: "㈜이피티 & 에드워드 코리아 산학 과제. 10초 이내 500 RPM 도달하는 I-f 기동 및 16,000 RPM 초고속 센서리스 안정화 달성. 정전 시 모터 회생 에너지를 활용해 DSP 제어보드 전원을 1초 이상 유지하는 Blackout 방지 알고리즘 개발.",
           tags: ["IPMSM", "센서리스 모터제어", "16,000 RPM", "I-f 기동", "무정전 회생제동"]
         },
         {
           category: "산학협력",
           categoryType: "industry",
           title: "현대자동차(HMC) 기술용역 차량용 저전압 벅 컨버터 노이즈 저감",
-          period: "2023.05 - 2023.11",
-          description: "차량용 배터리단 저전압 벅 컨버터 구동 및 주파수 디더링(Frequency Dithering) 제어 알고리즘 설계를 통해 특정 스위칭 주파수 대역의 전도/방사 EMI 노이즈 Peak 분산 및 저감 실증.",
-          tags: ["현대자동차", "DC-DC 벅 컨버터", "주파수 디더링", "EMI 노이즈 저감"]
-        },
-        {
-          category: "학술연구",
-          categoryType: "research",
-          title: "국제저널 IEEE Access (SCI 1저자) & 전력전자학회논문지 (KCI 1저자) 게재",
-          period: "2024.09 & 2025.06",
-          description: "플라이백 스너버 댐핑 저항 수식 최적화 모델링(IEEE Access, DOI: 10.1109/ACCESS.2024.3458191) 및 IPMSM 고부하 기동 시 감쇠비 0.707 최적 댐핑 게인 기반 속도 진동 저감 능동 제어(전력전자학회논문지, DOI: 10.6113/TKPE.2025.30.3.215 & 석사학위논문).",
-          tags: ["IEEE Access (SCI)", "전력전자학회지 (KCI)", "석사 학위논문", "R2CD 스너버"],
-          links: [
-            { label: "IEEE Access 원문", url: "https://doi.org/10.1109/ACCESS.2024.3458191" },
-            { label: "KCI 논문지 원문", url: "https://doi.org/10.6113/TKPE.2025.30.3.215" }
-          ]
+          period: "2024.05 - 2024.08",
+          description: "한국자동차연구원(KATECH) 기술용역 과제. 차량 배터리단 저전압 벅 컨버터 구동 및 주파수 디더링(Frequency Dithering) 알고리즘 설계를 통해 피크 하모닉 노이즈 저감 실증.",
+          tags: ["현대자동차", "KATECH", "DC-DC 벅 컨버터", "주파수 디더링", "EMI 노이즈 저감"]
         },
         {
           category: "학술발표",
@@ -231,36 +238,45 @@ const SITE_CONFIG = {
           links: [
             { label: "전력전자학회(KIPE) 바로가기", url: "https://www.kipe.or.kr/" }
           ]
+        },
+        {
+          category: "학술연구",
+          categoryType: "research",
+          title: "국제저널 IEEE Access (SCI 1저자) & 전력전자학회논문지 (KCI 1저자) 게재",
+          period: "2024.09 & 2025.06",
+          description: "플라이백 스너버 댐핑 저항 수식 최적화 모델링(IEEE Access, 등재일: 2024.09.11) 및 IPMSM 고부하 기동 시 감쇠비 0.707 최적 댐핑 게인 기반 속도 진동 저감 능동 제어(전력전자학회논문지, 게재일: 2025.06 & 석사학위논문).",
+          tags: ["IEEE Access (SCI)", "전력전자학회지 (KCI)", "석사 학위논문", "R2CD 스너버"],
+          links: [
+            { label: "IEEE Access 원문", url: "https://doi.org/10.1109/ACCESS.2024.3458191" },
+            { label: "KCI 논문지 원문", url: "https://doi.org/10.6113/TKPE.2025.30.3.215" }
+          ]
         }
       ]
     },
     {
       id: "undergrad",
       tier: "major",
-      period: "2016.03 - 2022.08",
+      period: "2017.03 - 2023.02",
       organization: "한남대학교 공과대학 전기전자공학과",
       degree: "공학학사 (B.S.)",
       subInfo: "전력전자 전공 트랙",
-      summary: "전기전자공학 기초 회로이론, 전력변환 및 마이크로프로세서 제어 기반 구축",
+      summary: "전기전자공학 기초 회로이론, 전력변환 회로 및 마이크로프로세서 제어 기반 구축",
       subItems: [
+        {
+          category: "학부연구생",
+          categoryType: "research",
+          title: "모터제어 및 전력변환연구실 학부연구생",
+          period: "2021.08 - 2022.02",
+          description: "전력전자 및 모터제어 연구실(최종원 교수님) 학부연구생으로서 전력변환 토폴로지 및 임베디드 제어 기초 연구 수행.",
+          tags: ["학부연구생", "전력변환", "모터제어"]
+        },
         {
           category: "경진대회 수상",
           categoryType: "award",
-          title: "HCS 메가시티 실전문제연구단 연합경진대회 장려상 & HNU 캡스톤디자인 동상",
-          period: "2023.03 - 2023.12",
-          description: "'사랑의 배터리' 팀장으로서 산업체 연계 배터리 충전용 전력변환 시스템 개발 총괄. PLECS 시뮬레이션 기반 ZVS 최적 스위칭 주파수 해석 및 순수 C언어 레지스터 제어 펌웨어 구현.",
-          tags: ["사랑의 배터리 팀장", "배터리 충전기", "PLECS ZVS", "연합경진대회 장려상", "캡스톤 동상"]
-        },
-        {
-          category: "학술발표",
-          categoryType: "research",
-          title: "2023 전력전자학술대회(KIPE) 포스터 발표",
-          period: "2023.07",
-          description: "플라이백 컨버터의 스위칭 서지 전압 저감을 위한 R2CD 스너버 회로 최적 설계 기법 포스터 발표.",
-          tags: ["전력전자학회(KIPE)", "포스터 발표", "플라이백 컨버터"],
-          links: [
-            { label: "전력전자학회(KIPE) 바로가기", url: "https://www.kipe.or.kr/" }
-          ]
+          title: "HCS 메가시티 실전문제연구단 연합경진대회 장려상 & HNU 캡스톤디자인 발표회 은상",
+          period: "2022.05 - 2023.02",
+          description: "'사랑의 배터리' 팀장으로서 산업체 연계 배터리 충전 전력변환 시스템(AC/DC+DC/DC) 개발 총괄. PLECS ZVS 시뮬레이션 기반 최적 스위칭 주파수 선정 및 순수 C언어 레지스터 제어 펌웨어 구현 (2022.11 연합경진대회 장려상 & 교내 캡스톤 은상 수상).",
+          tags: ["사랑의 배터리 팀장", "배터리 충전기", "PLECS ZVS", "연합경진대회 장려상", "캡스톤 은상"]
         }
       ]
     }
