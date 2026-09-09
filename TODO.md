@@ -19,7 +19,7 @@
 
 | 순번 | 예정 일정 | 구분 | 작업 내용 | 상태 | 비고 |
 | :---: | :---: | :---: | :---| :---: | :---|
-| **1** | **오늘 21:00 (오늘 밤 9시)** | `포트폴리오 2단계` | **실전 기술 스택 & 툴체인 매트릭스 전면 개편**<br>- Embedded & DSP (TI TMS320F28377D, C/Embedded C, CCS, EasyDSP)<br>- Power & Circuit (Vienna, LLC, Flyback SMPS, OrCAD, PADS)<br>- Simulation & Protocol (MATLAB/Simulink, PLECS, PSIM, CAN) | **진행 대기 🎯** | 실무 스택 최적화 |
+| **1** | **오늘 21:00 (오늘 밤 9시)** | `포트폴리오 2단계` | **실전 기술 스택 & 툴체인 매트릭스 전면 개편 (AI·웹 스택 배제)**<br>- 미사용 웹/AI 툴(React, Next, Node, MCP 등) 완전 제거<br>- Embedded & DSP (TI TMS320F28377D, STM32, C/Embedded C, CCS, EasyDSP)<br>- Power & Circuit (Vienna, LLC, Flyback SMPS, 3-Level GaN, OrCAD, PADS)<br>- Motor Control & Algo (PMSM/IPMSM 센서리스, I-f 제어, 능동 댐핑, 무정전 회생)<br>- Simulation & Instrument (MATLAB/Simulink, PLECS, PSIM, CAN, DPT, 오실로스코프) | **진행 대기 🎯** | 사용자 실무 스택 100% 동기화 |
 | 2 | 내일 09:00 (내일 아침 9시) | `포트폴리오 3단계` | **4대 핵심 엔지니어링 프로젝트 쇼케이스 상세 구축**<br>1. 10kW급 EV 급속 충전 스테이션 UNIT 개발 (Vienna+LLC+Flyback)<br>2. 반도체 진공펌프 IPMSM 센서리스 인버터 (16,000 RPM & 무정전 회생제동)<br>3. HMC 기술용역 저전압 벅 컨버터 가변 주파수 EMI 노이즈 저감<br>4. R2CD 스너버 서지 전압 저감 최적화 수식 모델링 | 대기중 ⏳ | 카드별 상세 스펙 및 성과 |
 | 3 | 내일 21:00 (내일 밤 9시) | `디버깅` | **모바일 & 태블릿 반응형 레이아웃 및 햄버거 메뉴 디버깅**<br>- 다양한 해상도(모바일, 태블릿, 데스크톱) 반응형 마감 검수<br>- 웹 접근성(a11y) 및 성능(Lighthouse) 최적화 | 대기중 ⏳ | 크로스 플랫폼 검증 |
 | 4 | 모레 09:00 (아침 9시) | `블로그` | **전력전자 / 임베디드 1호 기술 블로그 포스트 발행**<br>- 마크다운 기반 첫 기술 블로그 글 템플릿 생성 및 렌더링 점검 | 대기중 ⏳ | 블로그 기능 활성화 |
