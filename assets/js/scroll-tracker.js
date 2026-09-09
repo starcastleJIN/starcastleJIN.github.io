@@ -12,7 +12,7 @@
     { id: "skills-section", title: "02. Tech Stack" },
     { id: "philosophy-section", title: "03. Philosophy" },
     { id: "projects", title: "04. Projects" },
-    { id: "notes-journey-section", title: "05. Tech Notes & Journey" }
+    { id: "notes-career-section", title: "05. Tech Notes", subTitle: "& Career" }
   ];
 
   function initFloatingTracker() {
@@ -27,12 +27,15 @@
 
     if (validSections.length === 0) return;
 
-    // 2. 트래커 마크업 생성
+    // 2. 트래커 마크업 생성 (두 줄 렌더링 지원)
     trackerContainer.innerHTML = `
       <nav class="tracker-nav" aria-label="페이지 섹션 네비게이션">
         ${validSections.map((sec) => `
-          <a href="#${sec.id}" class="tracker-item" data-target="${sec.id}" title="${sec.title}">
-            <span class="tracker-label">${sec.title}</span>
+          <a href="#${sec.id}" class="tracker-item" data-target="${sec.id}" title="${sec.title}${sec.subTitle ? ' ' + sec.subTitle : ''}">
+            <span class="tracker-label">
+              <span class="tracker-line-1">${sec.title}</span>
+              ${sec.subTitle ? `<span class="tracker-line-2">${sec.subTitle}</span>` : ''}
+            </span>
             <span class="tracker-dot"></span>
           </a>
         `).join("")}
