@@ -83,22 +83,65 @@ const SITE_CONFIG = {
     }
   ],
 
-  // 기술 스택 (Skills)
+  // 기술 스택 (Skills - 실전 하드웨어, DSP 펌웨어, 모터제어 알고리즘, 계측 스택)
   skills: [
     {
-      category: "Frontend",
+      category: "Embedded & DSP",
+      badge: "Firmware & MCU",
       color: "emerald",
-      items: ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript", "React", "Tailwind CSS", "Next.js"]
+      items: [
+        "TI TMS320F28377D (C2000)",
+        "TI TMS320F28379D",
+        "STM32 (STMicroelectronics)",
+        "C / Embedded C",
+        "Code Composer Studio (CCS)",
+        "레지스터 레벨 BSW 구현",
+        "ePWM / ADC / DAC / ISR 최적화",
+        "EasyDSP 실시간 튜닝"
+      ]
     },
     {
-      category: "Backend & Cloud",
+      category: "Power Electronics & Circuit",
+      badge: "Topology & Hardware",
       color: "teal",
-      items: ["Node.js", "Express", "Python", "FastAPI", "PostgreSQL", "GitHub Pages"]
+      items: [
+        "3-Level Vienna Rectifier (AC/DC)",
+        "Full-Bridge LLC Resonant (DC/DC)",
+        "Flyback SMPS (50W~60W)",
+        "3-Level GaN Inverter",
+        "DC-DC Buck Converter",
+        "R2CD 스너버 수식 모델링",
+        "OrCAD Capture",
+        "PADS Logic / Layout (아트워크)"
+      ]
     },
     {
-      category: "Tools & Workflow",
+      category: "Motor Control & Algorithms",
+      badge: "Sensorless & Motion",
       color: "cyan",
-      items: ["Git & GitHub", "VS Code", "Docker", "Model Context Protocol (MCP)", "Vercel"]
+      items: [
+        "PMSM / IPMSM 센서리스 제어",
+        "I-f 오픈루프 기동 알고리즘",
+        "HPF 기반 능동 댐핑 (ζ=0.707)",
+        "MTPA(최대토크/전류) 곡선 추정",
+        "무정전 회생제동 (Blackout 보호)",
+        "공조용 3kW EC-FAN 구동 제어",
+        "16,000 RPM 초고속 제어"
+      ]
+    },
+    {
+      category: "Simulation & Instruments",
+      badge: "Analysis & Lab Tools",
+      color: "indigo",
+      items: [
+        "PLECS (ZVS 스위칭 해석)",
+        "MATLAB / Simulink (근궤적 해석)",
+        "PSIM",
+        "CAN 통신 (PCAN-View, Explorer)",
+        "오실로스코프 & 차동 프로브",
+        "파워 애널라이저",
+        "Double Pulse Test (DPT)"
+      ]
     }
   ],
 

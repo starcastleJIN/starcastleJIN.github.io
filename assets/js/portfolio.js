@@ -100,24 +100,33 @@ function renderCurrentlyLearning() {
   `;
 }
 
-// 3. 벤토 위젯: 기술 스택 매트릭스
+// 3. 벤토 위젯: 기술 스택 매트릭스 (4대 실전 엔지니어링 카테고리)
 function renderBentoSkills() {
   const { skills } = SITE_CONFIG;
   const container = document.getElementById("bento-skills-container");
   if (!container || !skills) return;
 
   container.innerHTML = skills.map((group) => `
-    <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/70 dark:border-slate-800">
-      <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-2.5 flex items-center gap-1.5">
-        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-        ${escapeHTML(group.category)}
-      </h4>
-      <div class="flex flex-wrap gap-1.5">
-        ${group.items.map((skill) => `
-          <span class="px-2.5 py-1 text-xs font-medium bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-md border border-slate-200/60 dark:border-slate-700 shadow-2xs">
-            ${escapeHTML(skill)}
-          </span>
-        `).join("")}
+    <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/70 dark:border-slate-800 hover:border-emerald-500/40 transition-all flex flex-col justify-between group/skillcard shadow-xs">
+      <div>
+        <div class="flex items-center justify-between mb-3 pb-2 border-b border-slate-200/60 dark:border-slate-800">
+          <h4 class="text-xs sm:text-sm font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            ${escapeHTML(group.category)}
+          </h4>
+          ${group.badge ? `
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 font-semibold border border-emerald-500/20">
+              ${escapeHTML(group.badge)}
+            </span>
+          ` : ""}
+        </div>
+        <div class="flex flex-wrap gap-1.5 pt-1">
+          ${group.items.map((skill) => `
+            <span class="px-2.5 py-1 text-xs font-medium bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-lg border border-slate-200/60 dark:border-slate-700 shadow-2xs hover:border-emerald-500/50 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+              ${escapeHTML(skill)}
+            </span>
+          `).join("")}
+        </div>
       </div>
     </div>
   `).join("");
