@@ -220,6 +220,17 @@ const SITE_CONFIG = {
             { label: "IEEE Access 원문", url: "https://doi.org/10.1109/ACCESS.2024.3458191" },
             { label: "KCI 논문지 원문", url: "https://doi.org/10.6113/TKPE.2025.30.3.215" }
           ]
+        },
+        {
+          category: "학술발표",
+          categoryType: "research",
+          title: "2024 전력전자학술대회(KIPE) 오랄 세션 구두 발표",
+          period: "2024.07",
+          description: "매입형 영구자석 전동기(IPMSM) 고부하 기동 시 속도 진동 저감을 위한 I-f 제어 방안 구두 발표 (오랄 세션). 테일러 급수 선형화 및 근궤적 해석 기반 감쇠비 0.707 최적 댐핑 제어 검증.",
+          tags: ["전력전자학회(KIPE)", "오랄 발표", "IPMSM", "I-f 제어"],
+          links: [
+            { label: "전력전자학회(KIPE) 바로가기", url: "https://www.kipe.or.kr/" }
+          ]
         }
       ]
     },
@@ -243,10 +254,13 @@ const SITE_CONFIG = {
         {
           category: "학술발표",
           categoryType: "research",
-          title: "2023 전력전자학술대회 포스터 발표",
+          title: "2023 전력전자학술대회(KIPE) 포스터 발표",
           period: "2023.07",
           description: "플라이백 컨버터의 스위칭 서지 전압 저감을 위한 R2CD 스너버 회로 최적 설계 기법 포스터 발표.",
-          tags: ["한국전력전자학회", "포스터 발표", "플라이백 컨버터"]
+          tags: ["전력전자학회(KIPE)", "포스터 발표", "플라이백 컨버터"],
+          links: [
+            { label: "전력전자학회(KIPE) 바로가기", url: "https://www.kipe.or.kr/" }
+          ]
         }
       ]
     }

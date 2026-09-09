@@ -226,19 +226,19 @@ function renderExperiences() {
   };
 
   container.innerHTML = `
-    <div class="relative border-l-2 border-emerald-500/40 dark:border-emerald-500/30 ml-3 sm:ml-5 pl-6 sm:pl-8 space-y-12">
+    <div class="relative border-l-2 border-emerald-500/40 dark:border-emerald-500/30 ml-3 sm:ml-5 pl-6 sm:pl-8">
       ${experiences.map((exp) => `
-        <div class="relative group/major pb-8 sm:pb-12">
+        <div class="relative group/major chapter-container pb-0" data-chapter="${escapeHTML(exp.id || "")}">
           <!-- 대분류 틀고정 헤더 래퍼 (Sticky Header Wrap) -->
-          <div class="sticky top-20 sm:top-24 z-20 pt-1 pb-2">
+          <div class="sticky-chapter-header sticky top-20 sm:top-24 z-20 pt-1 pb-2">
             <!-- 대분류 노드 (Main Trunk Node) -->
-            <div class="absolute -left-[33px] sm:-left-[41px] top-5 sm:top-6 w-5 h-5 bg-emerald-600 dark:bg-emerald-500 rounded-full ring-4 ring-white dark:ring-slate-900 shadow-md flex items-center justify-center transition-transform group-hover/major:scale-110">
+            <div class="chapter-node absolute -left-[33px] sm:-left-[41px] top-5 sm:top-6 w-5 h-5 bg-emerald-600 dark:bg-emerald-500 rounded-full ring-4 ring-white dark:ring-slate-900 shadow-md flex items-center justify-center transition-all group-hover/major:scale-110">
               <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
             </div>
 
             <!-- 대분류 헤더 카드 (중분류가 아래로 지나갈 때 완벽히 가려지도록 불투명 배경 & 입체 그림자) -->
-            <div class="p-4 sm:p-5 rounded-2xl bg-white/95 dark:bg-[#0f172a]/95 border border-slate-200/90 dark:border-slate-800 shadow-lg shadow-slate-200/50 dark:shadow-black/60 backdrop-blur-xl transition-colors group-hover/major:border-emerald-500/40">
-              <div class="flex flex-wrap items-center gap-2 mb-2">
+            <div class="chapter-card p-4 sm:p-5 rounded-2xl bg-white/95 dark:bg-[#0f172a]/95 border border-slate-200/90 dark:border-slate-800 shadow-md backdrop-blur-xl transition-all group-hover/major:border-emerald-500/40">
+              <div class="chapter-top-bar flex flex-wrap items-center gap-2 mb-2 transition-all">
                 <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-600 text-white shadow-sm font-mono">
                   ${escapeHTML(exp.period)}
                 </span>
@@ -247,28 +247,34 @@ function renderExperiences() {
                 </span>
               </div>
 
-              <h3 class="text-base sm:text-lg font-black text-slate-900 dark:text-white tracking-tight">
+              <h3 class="chapter-title text-base sm:text-lg font-black text-slate-900 dark:text-white tracking-tight transition-all">
                 ${escapeHTML(exp.organization)}
               </h3>
 
-              ${exp.subInfo ? `
-                <div class="text-xs sm:text-sm font-semibold text-emerald-700 dark:text-emerald-400 mt-1 flex items-center gap-1.5">
-                  <svg class="w-3.5 h-3.5 flex-shrink-0 opacity-80" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                  ${escapeHTML(exp.subInfo)}
-                </div>
-              ` : ""}
+              <!-- 틀고정 시 컴팩트 축소되는 세부 내용 영역 -->
+              <div class="chapter-collapsible transition-all overflow-hidden">
+                ${exp.subInfo ? `
+                  <div class="text-xs sm:text-sm font-semibold text-emerald-700 dark:text-emerald-400 mt-1 flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0 opacity-80" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    ${escapeHTML(exp.subInfo)}
+                  </div>
+                ` : ""}
 
-              ${exp.summary ? `
-                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
-                  ${escapeHTML(exp.summary)}
-                </p>
-              ` : ""}
+                ${exp.summary ? `
+                  <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2.5 leading-relaxed">
+                    ${escapeHTML(exp.summary)}
+                  </p>
+                ` : ""}
+              </div>
             </div>
+
+            <!-- 아래쪽 투명 그라데이션 음영 (Fade Shade: 하위 경력 가독성 극대화) -->
+            <div class="chapter-gradient-shade"></div>
           </div>
 
           <!-- 중분류 트리 (Inner Sub-branch Timeline) -->
           ${exp.subItems && exp.subItems.length > 0 ? `
-            <div class="relative border-l-2 border-dashed border-slate-300 dark:border-slate-700/80 ml-2 sm:ml-4 pl-5 sm:pl-6 space-y-6 mt-3">
+            <div class="relative border-l-2 border-dashed border-slate-300 dark:border-slate-700/80 ml-2 sm:ml-4 pl-5 sm:pl-6 space-y-6 mt-3 pb-10 sm:pb-14">
               ${exp.subItems.map((item) => `
                 <div class="relative group/item">
                   <!-- 중분류 노드 (Sub-branch Node) -->
@@ -322,6 +328,56 @@ function renderExperiences() {
       `).join("")}
     </div>
   `;
+
+  // 스티키 헤더 컴팩트 컨트롤러 초기화
+  setupStickyChapterHeaders();
+}
+
+// 대분류 스티키 헤더 컴팩트 모드 & 그라데이션 음영 동적 컨트롤러
+function setupStickyChapterHeaders() {
+  const containers = document.querySelectorAll(".chapter-container");
+  if (!containers.length) return;
+
+  let ticking = false;
+
+  function updateStickyStates() {
+    const stickyThreshold = window.innerWidth >= 640 ? 96 : 80;
+
+    containers.forEach((container) => {
+      const header = container.querySelector(".sticky-chapter-header");
+      if (!header) return;
+
+      const containerRect = container.getBoundingClientRect();
+      const headerRect = header.getBoundingClientRect();
+
+      // 헤더가 상단 스티키 위치에 닿았고, 해당 챕터 하단이 완전히 지나가지 않았을 때
+      const isStuck = headerRect.top <= (stickyThreshold + 4) && containerRect.bottom > (stickyThreshold + 60);
+
+      if (isStuck) {
+        header.classList.add("is-stuck");
+      } else {
+        header.classList.remove("is-stuck");
+      }
+    });
+
+    ticking = false;
+  }
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      requestAnimationFrame(updateStickyStates);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  window.addEventListener("resize", () => {
+    if (!ticking) {
+      requestAnimationFrame(updateStickyStates);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateStickyStates();
 }
 
 // 7. 최신 블로그 글 미리보기
