@@ -1,8 +1,23 @@
-# 🌟 GitHub Pages 개인 포트폴리오 & 기술 블로그
+# ⚡ 진성규 (Seonggyu Jin) · 포트폴리오 & 기술 블로그
 
-깃허브(GitHub Pages)를 통해 무료로 영구 호스팅되는 **개인 포트폴리오 및 기술 블로그** 통합 웹사이트입니다.
+> **전력전자 & 모터제어 임베디드 SW 엔지니어 (Power Electronics & Motor Control Engineer)**  
+> *"수식적 모델링에서 DSP 펌웨어 및 하드웨어 실증까지, 전 과정을 아우르는 엔지니어링"*
 
-별도의 복잡한 프레임워크 빌드나 유료 서버 없이, HTML5 / Tailwind CSS / Vanilla JS / Marked.js 기반의 표준 정적 구조로 제작되어 안정적이고 빠릅니다.
+<div align="center">
+
+[![Live Portfolio](https://img.shields.io/badge/Live_Portfolio-starcastleJIN.github.io-10b981?style=for-the-badge&logo=githubpages&logoColor=white)](https://starcastleJIN.github.io)
+[![Tistory Blog](https://img.shields.io/badge/Tech_Blog-로그%20%26%20라이프-ea580c?style=for-the-badge&logo=blogger&logoColor=white)](https://power-n-life.tistory.com)
+
+### 🌐 [👉 공식 포트폴리오 웹사이트 바로가기 : https://starcastleJIN.github.io](https://starcastleJIN.github.io)
+### 📝 [👉 티스토리 기술 블로그 바로가기 : https://power-n-life.tistory.com](https://power-n-life.tistory.com)
+
+</div>
+
+---
+
+깃허브(GitHub Pages)를 통해 무료로 호스팅되는 **진성규 엔지니어의 개인 포트폴리오 및 기술 블로그** 통합 웹사이트입니다.
+
+별도의 복잡한 프레임워크 빌드나 유료 서버 없이, HTML5 / Tailwind CSS / Vanilla JS 기반의 Hallmark Bento Grid 아키텍처로 제작되어 초경량·고속 로딩을 지원합니다.
 
 ---
 
