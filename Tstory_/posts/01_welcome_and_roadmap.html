@@ -1,0 +1,53 @@
+<h1>전력전자 & 임베디드 제어 기술 아카이브를 시작하며</h1>
+<p><br /></p>
+<blockquote><strong>작성자</strong>: 진성규 (Sunggyu Jin)  </blockquote>
+<blockquote><strong>분류</strong>: Engineering / Overview  </blockquote>
+<blockquote><strong>일자</strong>: 2026-09-09  </blockquote>
+<p><br /></p>
+<hr />
+<p><br /></p>
+<h2>1. 지식 아카이브의 시작 (Introduction)</h2>
+<p><br /></p>
+<p>안녕하세요. 전력전자 및 모터 제어 임베디드 소프트웨어 엔지니어 <strong>진성규</strong>입니다.</p>
+<p><br /></p>
+<p>학위 과정과 다수의 산학 프로젝트를 진행하며 체득한 가장 중요한 원칙은 <strong>"견고한 이론적 수식과 실제 하드웨어 검증이 결합될 때 비로소 진정한 엔지니어링 신뢰성이 완성된다"</strong>는 점이었습니다.</p>
+<p><br /></p>
+<p>수식 모델링 없이 휴리스틱하게 튜닝한 제어기는 한계 영역에서 쉽게 발산하며, 반대로 실물 기생 성분(Parasitics)과 디지털 이산화 딜레이를 고려하지 않은 순수 이론은 현장의 스위칭 노이즈 앞에서 무력해집니다.</p>
+<p><br /></p>
+<p>본 기술 블로그(<a href="https://power-n-life.tistory.com" target="_blank" rel="noopener">power-n-life.tistory.com</a>)는 이론적 수식 유도부터 DSP 펌웨어 코드, 시뮬레이션, 실물 하드웨어 검증에 이르는 전 과정을 기록하는 순수 엔지니어링 아카이브입니다.</p>
+<p><br /></p>
+<hr />
+<p><br /></p>
+<h2>2. 향후 다룰 핵심 기술 분야 (Roadmap)</h2>
+<p><br /></p>
+<p>앞으로 본 블로그에서는 다음과 같은 주제들을 심도 있게 다룰 예정입니다:</p>
+<p><br /></p>
+<h3>1) 고효율 전력변환 토폴로지 & 제어 (Power Electronics)</h3>
+<ul><li><strong>10kW급 EV 급속 충전 스테이션 UNIT</strong>: 3상 3레벨 Vienna 정류기 및 양방향 LLC 공진형 컨버터 설계</li></ul>
+<ul><li><strong>직류단 중성점 전압 밸런싱</strong>: 저부하 역률 개선 및 오프셋 전압 주입 제어 알고리즘</li></ul>
+<ul><li><strong>고전압 스위칭 서지 저감</strong>: R2CD 스너버 회로 수식 모델링 및 설계 최적화</li></ul>
+<p><br /></p>
+<h3>2) 영구자석 동기전동기(PMSM/IPMSM) 정밀 제어 (Motor Control)</h3>
+<ul><li><strong>초고속 반도체 진공펌프 인버터 (16,000 RPM)</strong></li></ul>
+<ul><li><strong>센서리스 제어</strong>: 확장 유기기전력(EEMF) 관측기 및 저속 고주파 전압 주입법(HFVI)</li></ul>
+<ul><li><strong>무정전 회생 제동 제어</strong>: 정전 시 모터의 운동 에너지를 회생하여 시스템 전원을 유지하는 안전 로직</li></ul>
+<p><br /></p>
+<h3>3) 임베디드 DSP & 펌웨어 아키텍처 (Embedded DSP)</h3>
+<ul><li><strong>TI C2000 계열 (TMS320F28377D)</strong> 듀얼 코어 인터럽트 서비스 루틴(ISR) 최적화</li></ul>
+<ul><li><strong>고속 ADC 샘플링 & PWM 동기화</strong>: 스위칭 노이즈를 회피하는 샘플 트리거링 기법</li></ul>
+<ul><li><strong>산업용 통신 프로토콜</strong>: CAN 2.0B 및 RS-485 통신 스택 구현</li></ul>
+<p><br /></p>
+<hr />
+<p><br /></p>
+<h2>3. 기록의 형식과 지향점</h2>
+<p><br /></p>
+<p>본 블로그에 작성되는 모든 기술 글은 아래의 3대 원칙을 따릅니다:</p>
+<p><br /></p>
+<ol><li><strong>엄밀한 수식 표기</strong>: 추상적인 설명 대신 KaTeX 렌더링을 통한 명확한 수식($\LaTeX$) 전개</li></ol>
+<ol><li><strong>실전 코드 공유</strong>: C/Embedded C 기반의 핵심 레지스터 제어 및 알고리즘 루틴 제공</li></ol>
+<ol><li><strong>재현 가능한 실증</strong>: PLECS/Simulink 시뮬레이션 파형 및 오실로스코프 실측 데이터 비교</li></ol>
+<p><br /></p>
+<p>상세한 이력과 연구 실적 타임라인은 <a href="https://starcastlejin.github.io/" target="_blank" rel="noopener">GitHub Pages 메인 포트폴리오</a>에서도 함께 확인하실 수 있습니다.</p>
+<p><br /></p>
+<p>실무 엔지니어분들과 학생분들 모두에게 실질적인 영감과 도움이 되는 공간이 되기를 기대합니다. 감사합니다.</p>
+<p><br /></p>

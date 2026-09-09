@@ -11,3 +11,7 @@ node_modules/
 # Secrets & Environment
 .env
 .env.*
+
+# Local Sessions & Caches
+Tstory_/.tistory_session/
+.playwright-mcp/

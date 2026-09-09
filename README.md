@@ -1,4 +1,4 @@
-# ⚡ 진성규 (Seonggyu Jin) · 포트폴리오 & 기술 블로그
+# ⚡ 진성규 (Sunggyu Jin) · 포트폴리오 & 기술 블로그
 
 > **전력전자 & 모터제어 임베디드 SW 엔지니어 (Power Electronics & Motor Control Engineer)**  
 > *"수식적 모델링에서 DSP 펌웨어 및 하드웨어 실증까지, 전 과정을 아우르는 엔지니어링"*

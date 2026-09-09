@@ -5,7 +5,7 @@
 const SITE_CONFIG = {
   // 기본 프로필 정보
   profile: {
-    name: "진성규 (Seonggyu Jin)",
+    name: "진성규 (Sunggyu Jin)",
     role: "전력전자 & 모터제어 임베디드 SW 엔지니어",
     tagline: "수식적 모델링에서 DSP 펌웨어 및 하드웨어 실증까지, 전 과정을 아우르는 엔지니어링",
     bio: "전기공학 석사(전력전자 및 모터 제어 연구실) 출신으로, 3-Level Vienna Rectifier / Full-Bridge LLC / Flyback SMPS 회로 설계부터 TI C2000 DSP 기반 PMSM/IPMSM 센서리스(I-f 제어) 펌웨어 알고리즘 개발까지 전 과정을 주도합니다.",
@@ -34,34 +34,29 @@ const SITE_CONFIG = {
       {
         badge: "Degree",
         title: "전기공학 공학석사 (M.S.)",
-        highlight: "전력전자 & 모터제어 전공",
-        skills: ["전력전자", "모터제어", "석사학위"]
+        highlight: "전력전자 & 모터제어 전공"
       },
       {
         badge: "SCI 1저자",
         title: "IEEE Access 게재 (2024)",
         highlight: "R2CD 스너버 최적 수식 모델링",
-        doi: "10.1109/ACCESS.2024.3458191",
-        skills: ["Flyback SMPS", "스너버 최적화", "56W 하드웨어"]
+        doi: "10.1109/ACCESS.2024.3458191"
       },
       {
         badge: "KCI 1저자",
         title: "전력전자학회지 등재 (2025)",
         highlight: "IPMSM 센서리스 댐핑 알고리즘",
-        doi: "10.6113/TKPE.2025.30.3.215",
-        skills: ["IPMSM", "I-f 센서리스", "능동 댐핑 제어"]
+        doi: "10.6113/TKPE.2025.30.3.215"
       },
       {
         badge: "HW 실증",
         title: "10kW EV & 16,000 RPM",
-        highlight: "급속충전 UNIT & 진공펌프 인버터",
-        skills: ["Vienna Rectifier", "LLC 공진", "16,000 RPM"]
+        highlight: "급속충전 UNIT & 진공펌프 인버터"
       },
       {
         badge: "DSP & SW",
-        title: "TI C2000 DSP 펌웨어 직접 개발",
-        highlight: "레지스터/인터럽트 직접 구현",
-        skills: ["TMS320F28377D", "Embedded C", "CAN 통신"]
+        title: "TI C2000 DSP 펌웨어 개발",
+        highlight: "레지스터 및 인터럽트 최적 제어 구현"
       }
     ]
   },
@@ -84,7 +79,7 @@ const SITE_CONFIG = {
       number: "03",
       title: "라이브러리 탈피와 핵심 제어 기술 내재화",
       enTitle: "Core Control In-House",
-      desc: "상용 블랙박스 라이브러리에 기대지 않고, ADC 샘플링·PWM 제어부터 I-f 센서리스 알고리즘까지 바닥부터 C 코드로 직접 구현하여 독자적 제어권을 확보합니다."
+      desc: "상용 블랙박스 라이브러리에 의존하지 않고, ADC 샘플링·PWM 제어부터 I-f 센서리스 알고리즘까지 바닥부터 C 코드로 구현하여 독자적 제어권을 확보합니다."
     }
   ],
 
@@ -144,6 +139,44 @@ const SITE_CONFIG = {
   // 경력 및 활동 이력 (2-Tier Hierarchical Timeline: 대분류 기관/학위 ➡️ 중분류 세부 프로젝트/연구/수상)
   experiences: [
     {
+      id: "wonik-pne",
+      tier: "major",
+      period: "2024.09 - 현재",
+      organization: "원익피앤이 (WONIK PNE)",
+      degree: "전력 제어 그룹 (Power Control Group)",
+      subInfo: "연구원 / 전력전자 제어 엔지니어 (재직 중)",
+      summary: "2차전지 활성화(Formation & Cycler) 충방전 전력변환 시스템 제어 알고리즘 및 임베디드 펌웨어 개발",
+      subItems: [
+        {
+          category: "양산/개발",
+          categoryType: "project",
+          title: "2차전지 충방전 전력변환 시스템 제어 및 임베디드 펌웨어 개발",
+          period: "2024.09 - 현재",
+          description: "2차전지 제조 공정용 고효율 충방전기(Formation & Cycler) 전력변환 제어 알고리즘 설계 및 펌웨어 구현, 제어 루프 안정성 및 전력 품질 최적화.",
+          tags: ["2차전지", "충방전기", "전력변환제어", "임베디드SW", "WONIK PNE"]
+        }
+      ]
+    },
+    {
+      id: "keti",
+      tier: "major",
+      period: "2024",
+      organization: "한국전자기술연구원 (KETI)",
+      degree: "연구원 (Researcher)",
+      subInfo: "전력변환 및 에너지 제어 시스템 연구",
+      summary: "신재생 에너지 및 산업용 전력변환 시스템 제어 알고리즘 연구 및 회로 토폴로지 해석·검증",
+      subItems: [
+        {
+          category: "연구과제",
+          categoryType: "research",
+          title: "전력변환 및 지능형 에너지 제어 시스템 연구",
+          period: "2024",
+          description: "에너지 변환 효율 향상을 위한 전력전자 토폴로지 분석 및 시뮬레이션, 제어 알고리즘 검증 연구 수행.",
+          tags: ["KETI", "전력변환", "에너지제어", "토폴로지해석"]
+        }
+      ]
+    },
+    {
       id: "grad-school",
       tier: "major",
       period: "2022.09 - 2024.08",
@@ -157,7 +190,7 @@ const SITE_CONFIG = {
           categoryType: "project",
           title: "10kW급 EV 급속 충전 스테이션 전력변환 UNIT 개발",
           period: "2022.09 - 2024.08",
-          description: "3-Level Vienna Rectifier(AC/DC) + Full-Bridge LLC Resonant Converter(DC/DC) 및 50W Flyback SMPS 보조전원 회로 설계. TI TMS320F28377D DSP 제어보드(OrCAD/PADS) 설계 및 C언어 레지스터 기반 인터럽트 최적화 펌웨어(CCS) 직접 구현.",
+          description: "3-Level Vienna Rectifier(AC/DC) + Full-Bridge LLC Resonant Converter(DC/DC) 및 50W Flyback SMPS 보조전원 회로 설계. TI TMS320F28377D DSP 제어보드(OrCAD/PADS) 설계 및 C언어 레지스터 기반 인터럽트 최적화 펌웨어(CCS) 구현 및 검증.",
           tags: ["TI F28377D", "Vienna Rectifier", "LLC Resonant", "Flyback SMPS", "CAN"]
         },
         {
@@ -204,7 +237,7 @@ const SITE_CONFIG = {
           categoryType: "award",
           title: "HCS 메가시티 실전문제연구단 연합경진대회 장려상 & HNU 캡스톤디자인 동상",
           period: "2023.03 - 2023.12",
-          description: "'사랑의 배터리' 팀장으로서 산업체 연계 배터리 충전용 전력변환 시스템 개발 총괄. PLECS 시뮬레이션 기반 ZVS 최적 스위칭 주파수 해석 및 순수 C언어 레지스터 제어 펌웨어 직접 구현.",
+          description: "'사랑의 배터리' 팀장으로서 산업체 연계 배터리 충전용 전력변환 시스템 개발 총괄. PLECS 시뮬레이션 기반 ZVS 최적 스위칭 주파수 해석 및 순수 C언어 레지스터 제어 펌웨어 구현.",
           tags: ["사랑의 배터리 팀장", "배터리 충전기", "PLECS ZVS", "연합경진대회 장려상", "캡스톤 동상"]
         },
         {

@@ -55,7 +55,7 @@ function renderCurrentlyLearning() {
   const listHtml = data.items.map((item) => `
     <li class="flex items-start gap-3 p-2 sm:p-2.5 rounded-xl hover:bg-slate-100/70 dark:hover:bg-slate-800/50 transition-colors">
       <div class="mt-0.5 flex-shrink-0">
-        <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20 font-mono">
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20">
           ${escapeHTML(item.badge || "Key")}
         </span>
       </div>
@@ -75,13 +75,6 @@ function renderCurrentlyLearning() {
             ${escapeHTML(item.highlight)}
           </p>
         ` : ''}
-        <div class="flex flex-wrap items-center gap-1.5 mt-1.5">
-          ${(item.skills || []).map((skill) => `
-            <span class="px-1.5 py-0.5 text-[10px] font-mono font-medium rounded bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/60 shadow-2xs">
-              #${escapeHTML(skill)}
-            </span>
-          `).join("")}
-        </div>
       </div>
     </li>
   `).join("");

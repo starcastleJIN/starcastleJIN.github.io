@@ -8,12 +8,13 @@
 
 ## 1. 👤 기본 프로필 & 엔지니어링 정체성
 
-- **이름**: 진성규 (Seonggyu Jin)
+- **이름**: 진성규 (Sunggyu Jin)
 - **아이디 / 깃허브**: starcastleJIN (`https://github.com/starcastleJIN`)
 - **이메일**: jsgyu0223@gmail.com
-- **학력**: 전기공학 석사 졸업 (전력전자 및 모터 제어 연구실)
+- **소속**: 원익피앤이(WONIK PNE) 전력 제어 그룹 (재직 중)
+- **학력**: 공학석사 (전력전자 및 모터 제어 연구실)
 - **전문 분야**: 
-  - **전력전자(Power Electronics)**: Vienna Rectifier, LLC Resonant Converter, Flyback SMPS 설계 및 제어
+  - **전력전자(Power Electronics)**: Vienna Rectifier, LLC Resonant Converter, Flyback SMPS, 2차전지 충방전 전력변환
   - **모터 제어(Motor Control)**: PMSM/IPMSM 센서리스 제어 알고리즘 (I-f 기동 제어, 역기전력 기반 추정)
   - **임베디드 펌웨어(Embedded Firmware)**: TI C2000 DSP (TMS320F28377D), C/Embedded C, CAN 통신, ADC/PWM 제어
 - **핵심 슬로건**:  
@@ -60,6 +61,22 @@
 
 ---
 
+## 2.1 🏢 실무 및 연구원 경력 (Career & Industrial Experience)
+
+### 1) 원익피앤이 (WONIK PNE)
+- **소속**: 전력 제어 그룹 (Power Control Group)
+- **직책/역할**: 연구원 / 전력 제어 엔지니어
+- **기간**: 2024.09 ~ 현재 (재직 중)
+- **주요 업무**: 2차전지 활성화(Formation & Cycler) 전력변환 장치 제어 알고리즘 및 임베디드 제어 펌웨어 개발
+
+### 2) 한국전자기술연구원 (KETI)
+- **소속**: 한국전자기술연구원 (Korea Electronics Technology Institute)
+- **직책/역할**: 연구원 (Researcher)
+- **기간**: 2024
+- **주요 업무**: 전력변환 및 에너지 제어 시스템 연구, 고효율 전력 회로 토폴로지 해석 및 제어 검증
+
+---
+
 ## 3. 🚀 핵심 엔지니어링 프로젝트 (Core Projects)
 
 ### 프로젝트 1. 고속 전기차(EV) 충전 스테이션용 10kW~30kW급 전력변환 UNIT 개발
@@ -67,7 +84,7 @@
 - **적용 토폴로지**: 3-Level Vienna Rectifier (AC/DC) + Full-Bridge LLC Resonant Converter (DC/DC)
 - **담당 역할 & 성과**:
   - **DSP 제어보드 설계 및 펌웨어 개발**: TI TMS320F28377D MCU 기반 회로(OrCAD/PADS) 및 PWM 버퍼, OP-Amp ADC 센싱단 설계. Code Composer Studio(CCS)를 통한 레지스터/인터럽트 최적화 펌웨어 구현.
-  - **보조전원(SMPS) 개발**: 150V~800V 광범위 입력 대비 24V/15V 50W급 다중출력 Flyback 컨버터 변압기 및 아날로그 회로 직접 설계.
+  - **보조전원(SMPS) 개발**: 150V~800V 광범위 입력 대비 24V/15V 50W급 다중출력 Flyback 컨버터 변압기 및 아날로그 회로 설계.
   - **제어 알고리즘 구현**: 비엔나 컨버터 3-Level SVM 및 전압 언밸런스 해소 오프셋 제어, LLC 컨버터 위상천이(Phase-shift) 소프트 스타트 알고리즘 개발.
   - **통신 환경 구축**: PCAN-View 및 EasyDSP 기반 CAN 통신 인터페이스 및 모니터링 환경 구축.
 
@@ -89,7 +106,7 @@
 - **목표**: 산업체 연계 배터리 충전용 전력변환 장치 개발
 - **담당 역할 & 성과**:
   - PLECS 시뮬레이션을 통해 ZVS 조건을 만족하는 최적 스위칭 주파수 대역 선정.
-  - ST사 라이브러리에 의존하지 않고 C언어로 순수 레지스터 제어 펌웨어를 직접 구현.
+  - ST사 라이브러리에 의존하지 않고 C언어로 순수 레지스터 제어 펌웨어 구현.
   - **수상 실적**: HCS 메가시티 실전문제연구단 연합경진대회 장려상, HNU 캡스톤디자인 동상 수상.
 
 ---
