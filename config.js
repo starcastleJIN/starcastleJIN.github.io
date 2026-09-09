@@ -5,42 +5,80 @@
 const SITE_CONFIG = {
   // 기본 프로필 정보
   profile: {
-    name: "starcastleJIN",
-    role: "Developer & Problem Solver",
-    tagline: "호기심을 코드로 엮고, 가치를 프로덕트로 증명합니다.",
-    bio: "기술로 일상의 불편을 해결하고 배운 것을 꾸준히 기록하는 개발자입니다. 간결한 구조, 높은 가독성, 편안한 사용자 경험을 추구합니다.",
-    avatar: "https://github.com/starcastleJIN.png", // GitHub 프로필 이미지 자동 연동
-    location: "Seoul, Republic of Korea",
+    name: "진성규 (Seonggyu Jin)",
+    role: "전력전자 & 모터제어 임베디드 SW 엔지니어",
+    tagline: "수식적 모델링에서 DSP 펌웨어 및 하드웨어 실증까지, 전 과정을 아우르는 엔지니어링",
+    bio: "전기공학 석사(전력전자 및 모터 제어 연구실) 출신으로, 3-Level Vienna Rectifier / Full-Bridge LLC / Flyback SMPS 회로 설계부터 TI C2000 DSP 기반 PMSM/IPMSM 센서리스(I-f 제어) 펌웨어 알고리즘 개발까지 전 과정을 주도합니다.",
+    avatar: "https://github.com/starcastleJIN.png", // 모던 아바타 유지
+    location: "Daejeon / Seoul, Republic of Korea",
     email: "jsgyu0223@gmail.com",
     githubUsername: "starcastleJIN",
-    statusText: "Open to Collaborate & Chat"
+    statusText: "Available for HW/SW Engineering Projects"
   },
 
   // 소셜 및 링크
   socials: {
     github: "https://github.com/starcastleJIN",
-    linkedin: "", // 필요시 입력 (예: https://linkedin.com/in/아이디)
+    linkedin: "", // 필요시 입력
     twitter: "",
     email: "mailto:jsgyu0223@gmail.com",
     blog: "https://power-n-life.tistory.com" // 티스토리 블로그 (로그 & 라이프 아카이브)
   },
 
-  // 벤토 위젯 1: 현재 집중해서 공부/개발 중인 기술 (Currently Hacking & Learning)
-  currentlyLearning: {
-    title: "Currently Hacking & Exploring",
-    status: "Active Learning",
+  // 벤토 위젯 1: 핵심 경력 요약 (Core Milestones & Verified Highlights)
+  coreHighlights: {
+    title: "Core Milestones",
+    subtitle: "핵심 경력 한눈에 보기",
+    status: "Verified",
     items: [
-      { name: "Agentic AI & MCP", desc: "AI 에이전트 오케스트레이션 및 MCP 프로토콜 연구" },
-      { name: "Modern Web Performance", desc: "Core Web Vitals 최적화 및 정적 사이트 경량화" },
-      { name: "Clean Architecture", desc: "유지보수성 높은 프론트엔드 모듈 설계 패턴" }
+      {
+        badge: "Degree",
+        name: "전기공학 공학석사 (M.S.)",
+        desc: "한남대학교 일반대학원 전력전자 및 모터제어 연구실 (지도교수: 최종원)"
+      },
+      {
+        badge: "SCI 1저자",
+        name: "IEEE Access 국제저널 논문 게재 (2024)",
+        desc: "Flyback R2CD 스너버 서지/손실 비용함수 최적 수식 모델링 및 56W 하드웨어 실증 (DOI: 10.1109/ACCESS.2024.3458191)"
+      },
+      {
+        badge: "KCI 1저자",
+        name: "전력전자학회논문지 등재 (2025.06)",
+        desc: "IPMSM 센서리스 고부하 기동 속도 진동 저감을 위한 I-f 제어 능동 댐핑 알고리즘 (DOI: 10.6113/TKPE.2025.30.3.215)"
+      },
+      {
+        badge: "Projects",
+        name: "10kW EV 급속 충전 UNIT & 16k RPM 인버터",
+        desc: "Vienna+LLC+Flyback 전력변환 장치 및 반도체 진공펌프 TI C2000 DSP 펌웨어 직접 구현"
+      },
+      {
+        badge: "Honors",
+        name: "HCS 메가시티 경진대회 장려상 & HNU 동상",
+        desc: "산업체 연계 배터리 충전 전력변환 시스템 개발 및 알고리즘 구현 (2023)"
+      }
     ]
   },
 
-  // 벤토 위젯 2: 개발 철학 (Developer Philosophy)
+  // 벤토 위젯 2: 개발 철학 (Engineering Principles)
   philosophy: [
-    { number: "01", title: "기록의 힘", desc: "기록하지 않은 고민은 휘발되지만, 기록된 해결책은 자산이 된다." },
-    { number: "02", title: "단순함의 미학", desc: "가장 좋은 코드는 불필요한 복잡성이 걷어내어진 명확한 코드다." },
-    { number: "03", title: "사용자 중심", desc: "기술은 목적이 아닌 수단이며, 결국 사용자의 경험을 위해 존재한다." }
+    {
+      number: "01",
+      title: "수식적 모델링과 하드웨어 실증",
+      enTitle: "Empirical Proof",
+      desc: "단순 시뮬레이션에 그치지 않고, 물리적 상태방정식과 비용함수를 수식화하여 56W~10kW급 하드웨어 실험으로 오차와 경향성을 끝까지 검증합니다."
+    },
+    {
+      number: "02",
+      title: "HW 회로와 DSP 펌웨어의 유기적 융합",
+      enTitle: "HW/SW Convergence",
+      desc: "전력 반도체의 기생 인덕턴스·스위칭 서지 등 아날로그 특성을 깊이 이해하고, TI C2000 DSP의 레지스터와 인터럽트를 정밀 제어하여 시스템 한계를 극복합니다."
+    },
+    {
+      number: "03",
+      title: "라이브러리 탈피와 핵심 제어 기술 내재화",
+      enTitle: "Core Control In-House",
+      desc: "상용 블랙박스 라이브러리에 기대지 않고, ADC 샘플링·PWM 제어부터 I-f 센서리스 알고리즘까지 바닥부터 C 코드로 직접 구현하여 독자적 제어권을 확보합니다."
+    }
   ],
 
   // 기술 스택 (Skills)
