@@ -1,9 +1,11 @@
-# OS
+# OS & System
 .DS_Store
 Thumbs.db
 
-# Logs
+# Logs & Caches
 *.log
+.playwright-mcp/
+package-lock.json
 
 # Node
 node_modules/
@@ -12,6 +14,16 @@ node_modules/
 .env
 .env.*
 
-# Local Sessions & Caches
-Tstory_/.tistory_session/
-.playwright-mcp/
+# Local Automation & Batch Scripts
+*.bat
+*.cmd
+*.ps1
+
+# Internal AI Agent Guidelines & Task Queues (Do Not Track)
+AGENTS.md
+PORTFOLIO_DOSSIER.md
+TODO.md
+
+# Internal Tistory Local Drafting & CDP Automation
+Tstory_/
+
