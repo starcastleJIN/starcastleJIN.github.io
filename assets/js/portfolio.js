@@ -94,7 +94,7 @@ function renderCurrentlyLearning() {
         ${escapeHTML(data.status || "Verified")}
       </span>
     </div>
-    <ul class="space-y-1 max-h-[295px] overflow-y-auto pr-1.5 custom-scrollbar">
+    <ul class="space-y-2 sm:space-y-2.5 flex-1 flex flex-col justify-between pt-2">
       ${listHtml}
     </ul>
   `;
@@ -408,56 +408,6 @@ function renderExperiences() {
       `).join("")}
     </div>
   `;
-
-  // 스티키 헤더 컴팩트 컨트롤러 초기화
-  setupStickyChapterHeaders();
-}
-
-// 대분류 스티키 헤더 컴팩트 모드 & 그라데이션 음영 동적 컨트롤러
-function setupStickyChapterHeaders() {
-  const containers = document.querySelectorAll(".chapter-container");
-  if (!containers.length) return;
-
-  let ticking = false;
-
-  function updateStickyStates() {
-    const stickyThreshold = window.innerWidth >= 640 ? 96 : 80;
-
-    containers.forEach((container) => {
-      const header = container.querySelector(".sticky-chapter-header");
-      if (!header) return;
-
-      const containerRect = container.getBoundingClientRect();
-      const headerRect = header.getBoundingClientRect();
-
-      // 헤더가 상단 스티키 위치에 닿았고, 해당 챕터 하단이 완전히 지나가지 않았을 때
-      const isStuck = headerRect.top <= (stickyThreshold + 4) && containerRect.bottom > (stickyThreshold + 60);
-
-      if (isStuck) {
-        header.classList.add("is-stuck");
-      } else {
-        header.classList.remove("is-stuck");
-      }
-    });
-
-    ticking = false;
-  }
-
-  window.addEventListener("scroll", () => {
-    if (!ticking) {
-      requestAnimationFrame(updateStickyStates);
-      ticking = true;
-    }
-  }, { passive: true });
-
-  window.addEventListener("resize", () => {
-    if (!ticking) {
-      requestAnimationFrame(updateStickyStates);
-      ticking = true;
-    }
-  }, { passive: true });
-
-  updateStickyStates();
 }
 
 // 7. 최신 블로그 글 미리보기
