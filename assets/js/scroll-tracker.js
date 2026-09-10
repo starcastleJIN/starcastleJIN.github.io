@@ -10,9 +10,8 @@
   const SECTIONS = [
     { id: "profile-section", title: "01. Profile" },
     { id: "skills-section", title: "02. Tech Stack" },
-    { id: "philosophy-section", title: "03. Philosophy" },
-    { id: "projects", title: "04. Projects" },
-    { id: "experience", title: "05. Career" }
+    { id: "projects", title: "03. Projects" },
+    { id: "experience", title: "04. Career" }
   ];
 
   function initFloatingTracker() {

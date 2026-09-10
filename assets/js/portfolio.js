@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderBentoHero();
   renderCurrentlyLearning();
   renderBentoSkills();
-  renderPhilosophy();
+  renderHeroPhilosophy();
   renderProjects();
   renderRecentPosts();
   renderExperiences();
@@ -132,23 +132,31 @@ function renderBentoSkills() {
   `).join("");
 }
 
-// 4. 벤토 위젯: 개발 철학 (My Principles)
-function renderPhilosophy() {
+// 4. 히어로 카드 내 개발 철학 컴팩트 인라인 렌더링
+/* Hallmark · pre-emit critique: P5 H4 E5 S5 R5 V4 */
+function renderHeroPhilosophy() {
   const { philosophy } = SITE_CONFIG;
-  const container = document.getElementById("philosophy-container");
-  if (!container || !philosophy) return;
+  const heroPhil = document.getElementById("hero-philosophy");
+  if (!heroPhil || !philosophy) return;
 
-  container.innerHTML = philosophy.map((item) => `
-    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/70 dark:border-slate-800 flex items-start gap-4 hover:border-emerald-500/40 transition-colors">
-      <span class="font-mono text-emerald-600 dark:text-emerald-400 font-extrabold text-base opacity-90">${item.number}</span>
-      <div>
-        <div class="flex flex-wrap items-baseline gap-2 mb-1.5">
-          <h5 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">${escapeHTML(item.title)}</h5>
-          ${item.enTitle ? `<span class="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold">${escapeHTML(item.enTitle)}</span>` : ''}
-        </div>
-        <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">${escapeHTML(item.desc)}</p>
-      </div>
-    </div>
+  const ul = heroPhil.querySelector("ul");
+  if (!ul) return;
+
+  // 짧은 요약 매핑 (원문을 핵심 한 문장으로 압축)
+  const shortDesc = [
+    "시뮬레이션에 그치지 않고, 수식화→하드웨어 실증까지 오차를 끝까지 검증",
+    "아날로그 기생 특성을 이해하고 DSP 레지스터·인터럽트를 정밀 제어",
+    "블랙박스 라이브러리 없이 ADC→PWM→센서리스까지 바닥부터 C 코드 구현"
+  ];
+
+  ul.innerHTML = philosophy.map((item, i) => `
+    <li class="flex items-start gap-2 text-[11px] sm:text-xs leading-snug py-0.5">
+      <span class="font-mono font-extrabold text-emerald-600 dark:text-emerald-400 flex-shrink-0">${item.number}</span>
+      <span>
+        <strong class="text-slate-800 dark:text-slate-100">${escapeHTML(item.title)}</strong>
+        <span class="text-slate-500 dark:text-slate-400 ml-1">— ${escapeHTML(shortDesc[i] || item.desc)}</span>
+      </span>
+    </li>
   `).join("");
 }
 

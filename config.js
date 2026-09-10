@@ -115,7 +115,7 @@ const SITE_CONFIG = {
     },
     {
       category: "Motor Control & Algorithms",
-      badge: "Sensorless & Motion",
+      badge: "Algorithms",
       color: "cyan",
       items: [
         "PMSM / IPMSM 센서리스 제어",
@@ -129,7 +129,7 @@ const SITE_CONFIG = {
     },
     {
       category: "Simulation & Instruments",
-      badge: "Analysis & Lab Tools",
+      badge: "Tools",
       color: "indigo",
       items: [
         "PLECS",
