@@ -104,14 +104,13 @@ const SITE_CONFIG = {
       badge: "Topology & Hardware",
       color: "teal",
       items: [
-        "3-Level Vienna Rectifier (AC/DC)",
-        "Full-Bridge LLC Resonant (DC/DC)",
+        "3-Level Vienna Rectifier",
         "Flyback SMPS (50W~60W)",
         "3-Level GaN Inverter",
         "DC-DC Buck Converter",
         "R2CD 스너버 수식 모델링",
-        "OrCAD Capture",
-        "PADS Logic / Layout (아트워크)"
+        "OrCAD",
+        "PADS"
       ]
     },
     {
@@ -121,6 +120,7 @@ const SITE_CONFIG = {
       items: [
         "PMSM / IPMSM 센서리스 제어",
         "I-f 오픈루프 진동 저감 알고리즘",
+        "3-Level 전압 밸런싱 알고리즘",
         "MTPA(최대토크/전류) 곡선 추정",
         "무정전 회생제동 (Blackout 보호)",
         "공조용 3kW EC-FAN 구동 제어",
@@ -136,8 +136,7 @@ const SITE_CONFIG = {
         "MATLAB / Simulink",
         "PSIM",
         "CAN 통신",
-        "오실로스코프 & 차동 프로브",
-        "파워 애널라이저",
+        "오실로스코프",
         "Double Pulse Test (DPT)"
       ]
     }
@@ -155,17 +154,17 @@ const SITE_CONFIG = {
       badgeColor: "emerald",
       metrics: [
         { label: "출력 사양", value: "1,000V / 10A (10kW)" },
-        { label: "주요 토폴로지", value: "Vienna + LLC + Flyback" },
+        { label: "주요 토폴로지", value: "3-Level Vienna + Flyback" },
         { label: "제어 컨트롤러", value: "TI TMS320F28377D (BSW)" }
       ],
-      description: "삼상 380V 계통 전원을 인가받아 200V~1,000V 광범위 직류 출력을 생성하는 30kW급 전기차 급속 충전기 파워 유닛 개발 과제입니다. 3-Level Vienna 정류기, Full-Bridge LLC 공진형 컨버터, 60W급 다중 출력 Flyback 보조전원 회로를 설계하고 TI DSP 레지스터 레벨 BSW 펌웨어를 구현하여 1차년도 10kW 실증을 성공적으로 달성했습니다.",
+      description: "삼상 380V 계통 전원을 인가받아 200V~1,000V 광범위 직류 출력을 생성하는 30kW급 전기차 급속 충전기 파워 유닛 개발 과제입니다. 3-Level Vienna 정류기 및 60W급 다중 출력 Flyback 보조전원 회로를 설계하고 TI DSP 레지스터 레벨 BSW 펌웨어를 구현하여 1차년도 10kW 실증을 성공적으로 달성했습니다.",
       keyTasks: [
         "TMS320F28377D MCU 기반 제어기 보드 회로 설계 (OP-Amp ADC 센싱단, 3-State 버퍼 PWM, HW_Fault 하드웨어 인터록)",
         "Code Composer Studio(CCS) 환경에서 레지스터 레벨 BSW 펌웨어 구현 (ADC, CAN, ePWM, DAC, PLL, ISR 동기화 최적화)",
         "PLECS 시뮬레이션 및 400V 조건 24V/15V 60W급 다중 출력 Flyback 변압기 설계 및 전부하 실증",
         "PCAN-View 및 EasyDSP 기반 실시간 파라미터 모니터링 & CAN 제어 UI 환경 구축"
       ],
-      techStack: ["TMS320F28377D", "Vienna Rectifier", "LLC Resonant", "Flyback SMPS", "Embedded C", "PADS", "PLECS", "PCAN"],
+      techStack: ["TMS320F28377D", "Vienna Rectifier", "Flyback SMPS", "Embedded C", "PADS", "PLECS", "PCAN"],
       links: [
         { label: "경력 & 학술 연계 ⬇", url: "#wonik-pne", type: "internal" }
       ],
