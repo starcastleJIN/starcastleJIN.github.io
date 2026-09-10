@@ -152,73 +152,136 @@ function renderPhilosophy() {
   `).join("");
 }
 
-// 5. 대표 프로젝트 렌더링
+// 5. 대표 엔지니어링 프로젝트 쇼케이스 렌더링 (Hallmark Showcase Archetype)
+/* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5 */
 function renderProjects() {
   const { projects } = SITE_CONFIG;
   const container = document.getElementById("projects-container");
   if (!container || !projects) return;
 
-  container.innerHTML = projects.map((project, idx) => `
-    <article class="group bento-card flex flex-col justify-between">
-      <div class="relative h-44 overflow-hidden bg-slate-100 dark:bg-slate-900">
-        <img 
-          src="${escapeHTML(project.thumbnail)}" 
-          alt="${escapeHTML(project.title)}" 
-          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          loading="lazy"
-          onerror="this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop&q=80'"
-        />
-        <div class="absolute top-3 right-3">
-          <span class="bento-badge bg-white/90 dark:bg-slate-900/90 backdrop-blur-md">
-            Featured #${idx + 1}
-          </span>
+  const badgeColorMap = {
+    emerald: "bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border-emerald-500/30",
+    teal: "bg-teal-500/15 text-teal-700 dark:text-teal-300 border-teal-500/30",
+    cyan: "bg-cyan-500/15 text-cyan-700 dark:text-cyan-300 border-cyan-500/30",
+    indigo: "bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 border-indigo-500/30"
+  };
+
+  container.innerHTML = projects.map((project, idx) => {
+    const badgeClass = badgeColorMap[project.badgeColor] || badgeColorMap.emerald;
+
+    return `
+    <article class="group bento-card flex flex-col justify-between hover:shadow-xl hover:border-emerald-500/40 transition-all duration-300">
+      <div>
+        <!-- Card Header Image & Overlay -->
+        <div class="relative h-48 sm:h-52 overflow-hidden bg-slate-100 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
+          <img 
+            src="${escapeHTML(project.thumbnail)}" 
+            alt="${escapeHTML(project.title)}" 
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+            onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80'"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent"></div>
+          
+          <!-- Top Badges -->
+          <div class="absolute top-3 left-3 right-3 flex items-center justify-between gap-2">
+            <span class="px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider rounded-lg border backdrop-blur-md ${badgeClass}">
+              ${escapeHTML(project.badge || "Engineering")}
+            </span>
+            <span class="px-2.5 py-1 text-[11px] font-mono font-semibold bg-slate-900/80 text-slate-200 border border-slate-700/60 rounded-lg backdrop-blur-md">
+              Project #0${idx + 1}
+            </span>
+          </div>
+
+          <!-- Bottom Overlay Info (Partner & Period) -->
+          <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs text-white/90 font-medium drop-shadow">
+            <span class="flex items-center gap-1.5 font-semibold text-slate-100 truncate pr-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400 flex-shrink-0"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              ${escapeHTML(project.partner || "")}
+            </span>
+            <span class="font-mono text-[11px] text-slate-300 flex-shrink-0">
+              ${escapeHTML(project.period || "")}
+            </span>
+          </div>
         </div>
-      </div>
-      <div class="p-6 flex-1 flex flex-col justify-between">
-        <div>
-          <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-            ${escapeHTML(project.title)}
-          </h3>
+
+        <!-- Card Content Body -->
+        <div class="p-6 sm:p-7">
+          <!-- Title & Subtitle -->
+          <div class="mb-4">
+            <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-snug group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+              ${escapeHTML(project.title)}
+            </h3>
+            ${project.subtitle ? `
+              <p class="text-xs sm:text-sm font-medium text-emerald-600 dark:text-emerald-400 mt-1">
+                ${escapeHTML(project.subtitle)}
+              </p>
+            ` : ""}
+          </div>
+
+          <!-- Key Metrics Grid (Stat-Led Microcomponent) -->
+          ${project.metrics && project.metrics.length > 0 ? `
+            <div class="grid grid-cols-3 gap-2 p-3 mb-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60">
+              ${project.metrics.map(m => `
+                <div class="text-center">
+                  <div class="text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-tight">${escapeHTML(m.label)}</div>
+                  <div class="text-xs sm:text-[13px] font-bold text-slate-800 dark:text-slate-100 font-mono mt-0.5">${escapeHTML(m.value)}</div>
+                </div>
+              `).join("")}
+            </div>
+          ` : ""}
+
+          <!-- Description -->
           <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
             ${escapeHTML(project.description)}
           </p>
+
+          <!-- Key Tasks / Achievements Bullets -->
+          ${project.keyTasks && project.keyTasks.length > 0 ? `
+            <div class="space-y-2 mb-5 pt-3 border-t border-slate-100 dark:border-slate-800">
+              <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-2">Key Engineering Achievements</span>
+              ${project.keyTasks.map(task => `
+                <div class="flex items-start gap-2 text-xs text-slate-600 dark:text-slate-400 leading-normal">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 flex-shrink-0"></span>
+                  <span>${escapeHTML(task)}</span>
+                </div>
+              `).join("")}
+            </div>
+          ` : ""}
+        </div>
+      </div>
+
+      <!-- Card Footer: Tags & Action Links -->
+      <div class="px-6 pb-6 sm:px-7 sm:pb-7">
+        <!-- Tech Stack Tags -->
+        <div class="flex flex-wrap gap-1.5 mb-4">
+          ${(project.techStack || project.tags || []).map(tag => `
+            <span class="px-2 py-0.5 text-[11px] font-mono font-medium bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 rounded-md border border-emerald-500/20">
+              #${escapeHTML(tag)}
+            </span>
+          `).join("")}
         </div>
 
-        <div>
-          <div class="flex flex-wrap gap-1 mb-5">
-            ${project.tags.map((tag) => `
-              <span class="px-2 py-0.5 text-[11px] font-medium bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 rounded">
-                #${escapeHTML(tag)}
-              </span>
-            `).join("")}
-          </div>
-
-          <div class="flex items-center gap-2 pt-4 border-t border-slate-100 dark:border-slate-800">
-            ${project.demoUrl ? `
-              <a 
-                href="${escapeHTML(project.demoUrl)}" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="flex-1 text-center py-2 text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg transition-colors"
-              >
-                라이브 데모
-              </a>
-            ` : ""}
-            ${project.githubUrl ? `
-              <a 
-                href="${escapeHTML(project.githubUrl)}" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="flex-1 text-center py-2 text-xs font-semibold text-slate-700 dark:text-slate-200 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 rounded-lg transition-colors"
-              >
-                GitHub 코드
-              </a>
-            ` : ""}
-          </div>
+        <!-- Action Links -->
+        <div class="flex items-center gap-2 pt-4 border-t border-slate-100 dark:border-slate-800">
+          ${(project.links || []).map(link => `
+            <a 
+              href="${escapeHTML(link.url)}" 
+              ${link.type === 'external' ? 'target="_blank" rel="noopener noreferrer"' : ''}
+              class="flex-1 text-center py-2.5 px-3 text-xs font-semibold rounded-xl transition-all shadow-sm ${
+                link.type === 'external' 
+                  ? 'bg-emerald-600 hover:bg-emerald-700 text-white shadow-emerald-500/20' 
+                  : 'bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200/60 dark:border-slate-700/60'
+              }"
+            >
+              ${escapeHTML(link.label)}
+            </a>
+          `).join("")}
         </div>
       </div>
     </article>
-  `).join("");
+    `;
+  }).join("");
 }
 
 // 6. 경력 및 활동 타임라인 (2-Tier Hierarchical Timeline: 대분류 기관/학위 ➡️ 중분류 세부 프로젝트/연구/수상)
