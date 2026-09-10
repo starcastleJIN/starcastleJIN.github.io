@@ -115,7 +115,7 @@ function renderBentoSkills() {
             ${escapeHTML(group.category)}
           </h4>
           ${group.badge ? `
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 font-semibold border border-emerald-500/20">
+            <span class="text-[10px] sm:text-[11px] font-bold tracking-tight px-2.5 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20">
               ${escapeHTML(group.badge)}
             </span>
           ` : ""}

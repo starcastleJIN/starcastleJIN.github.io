@@ -90,14 +90,13 @@ const SITE_CONFIG = {
       badge: "Firmware & MCU",
       color: "emerald",
       items: [
-        "TI TMS320F28377D (C2000)",
-        "TI TMS320F28379D",
-        "STM32 (STMicroelectronics)",
+        "TI사 MCU",
+        "STM32",
         "C / Embedded C",
         "Code Composer Studio (CCS)",
         "레지스터 레벨 BSW 구현",
         "ePWM / ADC / DAC / ISR 최적화",
-        "EasyDSP 실시간 튜닝"
+        "EasyDSP"
       ]
     },
     {
@@ -121,8 +120,7 @@ const SITE_CONFIG = {
       color: "cyan",
       items: [
         "PMSM / IPMSM 센서리스 제어",
-        "I-f 오픈루프 기동 알고리즘",
-        "HPF 기반 능동 댐핑 (ζ=0.707)",
+        "I-f 오픈루프 진동 저감 알고리즘",
         "MTPA(최대토크/전류) 곡선 추정",
         "무정전 회생제동 (Blackout 보호)",
         "공조용 3kW EC-FAN 구동 제어",
@@ -134,10 +132,10 @@ const SITE_CONFIG = {
       badge: "Analysis & Lab Tools",
       color: "indigo",
       items: [
-        "PLECS (ZVS 스위칭 해석)",
-        "MATLAB / Simulink (근궤적 해석)",
+        "PLECS",
+        "MATLAB / Simulink",
         "PSIM",
-        "CAN 통신 (PCAN-View, Explorer)",
+        "CAN 통신",
         "오실로스코프 & 차동 프로브",
         "파워 애널라이저",
         "Double Pulse Test (DPT)"
