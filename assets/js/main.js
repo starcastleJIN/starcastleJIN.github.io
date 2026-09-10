@@ -32,23 +32,67 @@
     });
   }
 
-  // 2. 모바일 메뉴 토글
+  // 2. 모바일 메뉴 토글 & 접근성 최적화
   function initMobileMenu() {
     const toggleBtn = document.getElementById("mobile-menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
 
-    if (toggleBtn && mobileMenu) {
-      toggleBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
+    if (!toggleBtn || !mobileMenu) return;
 
-      // 메뉴 항목 클릭 시 자동으로 닫히도록
-      mobileMenu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.add("hidden");
-        });
-      });
+    const openIcon = toggleBtn.querySelector(".icon-menu-open");
+    const closeIcon = toggleBtn.querySelector(".icon-menu-close");
+
+    function setMenuState(open) {
+      if (open) {
+        mobileMenu.classList.remove("hidden");
+        toggleBtn.setAttribute("aria-expanded", "true");
+        if (openIcon && closeIcon) {
+          openIcon.classList.add("hidden");
+          closeIcon.classList.remove("hidden");
+        }
+      } else {
+        mobileMenu.classList.add("hidden");
+        toggleBtn.setAttribute("aria-expanded", "false");
+        if (openIcon && closeIcon) {
+          openIcon.classList.remove("hidden");
+          closeIcon.classList.add("hidden");
+        }
+      }
     }
+
+    toggleBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isHidden = mobileMenu.classList.contains("hidden");
+      setMenuState(isHidden);
+    });
+
+    // 메뉴 항목 클릭 시 자동으로 닫히도록
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        setMenuState(false);
+      });
+    });
+
+    // 외부 클릭 시 메뉴 닫기
+    document.addEventListener("click", (e) => {
+      if (!mobileMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+        setMenuState(false);
+      }
+    });
+
+    // ESC 키 입력 시 닫기
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        setMenuState(false);
+      }
+    });
+
+    // 화면 너비가 데스크톱(768px 이상)으로 확장되면 자동 닫기
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 768) {
+        setMenuState(false);
+      }
+    });
   }
 
   // 3. 사이트 공통 브랜딩 동기화
