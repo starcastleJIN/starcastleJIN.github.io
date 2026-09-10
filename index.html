@@ -48,14 +48,15 @@
 
       <!-- Desktop Nav Links -->
       <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300">
-        <a href="#about" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">소개 &amp; 스택</a>
-        <a href="#projects" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">프로젝트</a>
-        <a href="#experience" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">이력</a>
+        <a href="#about" data-nav-section="about" class="nav-section-link hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">소개 &amp; 스택</a>
+        <a href="#projects" data-nav-section="projects" class="nav-section-link hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">프로젝트</a>
+        <a href="#experience" data-nav-section="experience" class="nav-section-link hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">이력</a>
         <a href="https://power-n-life.tistory.com" target="_blank" rel="noopener noreferrer" class="blog-link flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-semibold hover:underline">
           기술 블로그
           <span class="px-1.5 py-0.5 text-[10px] bg-emerald-100 dark:bg-emerald-950/80 rounded-full font-bold">Tistory ↗</span>
         </a>
       </nav>
+
 
       <!-- Right Controls: Theme Toggle & Socials -->
       <div class="flex items-center gap-2 sm:gap-3">
@@ -79,12 +80,13 @@
 
     <!-- Mobile Dropdown Menu -->
     <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md space-y-2 text-sm font-medium">
-      <a href="#about" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200">소개 &amp; 스택</a>
-      <a href="#projects" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200">프로젝트</a>
-      <a href="#experience" class="block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200">이력</a>
+      <a href="#about" data-nav-section="about" class="nav-section-link block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200">소개 &amp; 스택</a>
+      <a href="#projects" data-nav-section="projects" class="nav-section-link block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200">프로젝트</a>
+      <a href="#experience" data-nav-section="experience" class="nav-section-link block px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200">이력</a>
       <a href="https://power-n-life.tistory.com" target="_blank" rel="noopener noreferrer" class="blog-link block px-3 py-2 rounded-lg text-emerald-600 dark:text-emerald-400 font-semibold bg-emerald-50 dark:bg-slate-800">기술 블로그 방문하기 (Tistory) ↗</a>
     </div>
   </header>
+
 
   <!-- =========================================================================
        Main Bento Grid Layout (Hallmark Macrostructure)
@@ -227,11 +229,6 @@
   </main>
 
   <!-- =========================================================================
-       Hallmark Floating Scroll Tracker (Right Sticky Section Focus Navigator)
-       ========================================================================= -->
-  <aside id="floating-scroll-tracker" class="floating-scroll-tracker" aria-label="섹션 네비게이션 트래커"></aside>
-
-  <!-- =========================================================================
        Footer
        ========================================================================= -->
   <footer class="border-t border-slate-200 dark:border-slate-800 py-8 text-center text-xs text-slate-500 dark:text-slate-400 mt-12">
@@ -360,9 +357,9 @@
   </div>
 
   <!-- Core Scripts -->
-  <script src="config.js?v=20260910_06"></script>
-  <script src="assets/js/main.js?v=20260910_06"></script>
-  <script src="assets/js/portfolio.js?v=20260910_06"></script>
-  <script src="assets/js/scroll-tracker.js?v=20260910_06"></script>
+  <script src="config.js?v=20260911_01"></script>
+  <script src="assets/js/main.js?v=20260911_01"></script>
+  <script src="assets/js/portfolio.js?v=20260911_01"></script>
+  <script src="assets/js/scroll-tracker.js?v=20260911_01"></script>
 </body>
 </html>

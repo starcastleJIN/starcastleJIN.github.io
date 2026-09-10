@@ -353,177 +353,60 @@ body {
 }
 
 /* ==========================================================================
-   Hallmark Floating Scroll Tracker (Right Sticky Section Dynamic Focus Navigator)
+   Active Nav Highlight — 상단 네비게이션 스크롤 활성 섹션 강조 애니메이션
    Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5
    ========================================================================== */
-.floating-scroll-tracker {
-  position: fixed;
-  right: 1.25rem;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 45;
+
+/* 기본 상태: 데스크톱 nav 링크 */
+.nav-section-link {
+  position: relative;
+  transition: color 0.22s ease;
+}
+
+/* 활성 하이라이트 밑줄 트릭 */
+.nav-section-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #10b981, #0d9488);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+}
+
+/* 활성 상태 (JS 에서 .nav-active 클래스 부여) */
+.nav-section-link.nav-active {
+  color: #059669 !important; /* emerald-600 */
+  font-weight: 700;
+}
+.dark .nav-section-link.nav-active {
+  color: #34d399 !important; /* emerald-400 */
+}
+.nav-section-link.nav-active::after {
+  transform: scaleX(1);
+}
+
+/* 모바일 메뉴 활성 상태 (밑줄 대신 배경 강조) */
+#mobile-menu .nav-section-link.nav-active {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669 !important;
+  font-weight: 700;
+}
+.dark #mobile-menu .nav-section-link.nav-active {
+  background: rgba(52, 211, 153, 0.12);
+  color: #34d399 !important;
+}
+/* 모바일 링크는 밑줄 필요 없음 */
+#mobile-menu .nav-section-link::after {
   display: none;
 }
 
-@media (min-width: 1280px) {
-  .floating-scroll-tracker {
-    display: flex;
-    align-items: center;
-    gap: 0.85rem;
-    right: max(1.25rem, calc((100vw - 1440px) / 2 - 4.5rem));
-  }
-}
 
-/* 1280px ~ 1439px 좁은 데스크톱 화면에서 본문 침범 원천 방지 */
-@media (min-width: 1280px) and (max-width: 1439px) {
-  .tracker-item:not(.active):not(:hover) .tracker-label {
-    opacity: 0 !important;
-    pointer-events: none;
-    transform: scale(0.7) translateX(8px) !important;
-  }
-}
-
-.tracker-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 1.15rem;
-}
-
-.tracker-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  cursor: pointer;
-  text-decoration: none;
-  transform-origin: right center;
-  user-select: none;
-  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease;
-}
-
-/* Distant / Default Dimmed State (음영 처리 및 축소) */
-.tracker-item .tracker-label {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
-  line-height: 1.25;
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 500;
-  color: #64748b;
-  opacity: 0.35;
-  letter-spacing: -0.01em;
-  transform: scale(0.88);
-  transform-origin: right center;
-  transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
-  text-shadow: none;
-  white-space: nowrap;
-}
-
-.tracker-item .tracker-line-2 {
-  font-size: 0.72rem;
-  font-weight: 600;
-  opacity: 0.9;
-  letter-spacing: 0.01em;
-}
-
-.dark .tracker-item .tracker-label {
-  color: #94a3b8;
-  opacity: 0.32;
-}
-
-.tracker-item .tracker-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 9999px;
-  background-color: #cbd5e1;
-  transition: all 0.28s ease;
-  flex-shrink: 0;
-}
-
-.dark .tracker-item .tracker-dot {
-  background-color: #334155;
-}
-
-/* Hover Preview */
-.tracker-item:hover .tracker-label {
-  opacity: 0.95;
-  color: #0f172a;
-  transform: scale(1.0);
-}
-.dark .tracker-item:hover .tracker-label {
-  color: #f8fafc;
-  opacity: 0.95;
-}
-
-/* Active / Approaching State (글래스모피즘 슬림 HUD 필 뱃지 & 에메랄드/틸 브랜드 컬러 강조) */
-.tracker-item.active .tracker-label {
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: #059669 !important; /* Emerald-600 */
-  opacity: 1 !important;
-  transform: scale(1.1) translateX(-4px);
-  text-shadow: 0 0 14px rgba(16, 185, 129, 0.45);
-  padding: 0.25rem 0.65rem;
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 0.5rem;
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.2), 0 2px 5px rgba(0, 0, 0, 0.04);
-}
-
-.dark .tracker-item.active .tracker-label {
-  color: #34d399 !important; /* Emerald-400 for Dark Mode */
-  text-shadow: 0 0 16px rgba(52, 211, 153, 0.65);
-  background: rgba(15, 23, 42, 0.94);
-  border-color: rgba(52, 211, 153, 0.35);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 12px rgba(52, 211, 153, 0.25);
-}
-
-.tracker-item.active .tracker-line-2 {
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: inherit;
-}
-
-.tracker-item.active .tracker-dot {
-  width: 10px;
-  height: 10px;
-  background-color: #10b981;
-  box-shadow: 0 0 14px rgba(16, 185, 129, 0.9);
-  transform: scale(1.3);
-}
-
-.dark .tracker-item.active .tracker-dot {
-  background-color: #34d399;
-  box-shadow: 0 0 16px rgba(52, 211, 153, 0.95);
-}
-
-/* Vertical Track Rail */
-.tracker-rail {
-  position: relative;
-  width: 2px;
-  height: 200px;
-  background: rgba(148, 163, 184, 0.25);
-  border-radius: 9999px;
-}
-
-.dark .tracker-rail {
-  background: rgba(51, 65, 85, 0.55);
-}
-
-.tracker-rail-indicator {
-  position: absolute;
-  left: -2px;
-  width: 6px;
-  height: 28px;
-  border-radius: 9999px;
-  background: linear-gradient(180deg, #10b981, #0d9488);
-  box-shadow: 0 0 12px rgba(16, 185, 129, 0.85);
-  transition: top 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
 
 /* ==========================================================================
    Core Milestones Custom Scrollbar (드래그바)
