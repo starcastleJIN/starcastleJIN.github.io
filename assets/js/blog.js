@@ -258,12 +258,26 @@ function renderMarkdownContent(mdText) {
   // 본문 변환
   container.innerHTML = marked.parse(mdText);
 
+  // KaTeX 수식 렌더링 ($...$ 및 $$...$$)
+  if (typeof renderMathInElement === "function") {
+    renderMathInElement(container, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+      throwOnError: false
+    });
+  }
+
   // 헤딩에 ID 부여 및 목차(TOC) 생성
   setupHeadingsAndTOC(container);
 
   // 코드 하이라이팅 및 복사 버튼
   setupCodeBlocks(container);
 }
+
 
 // 목차(TOC) 생성
 function setupHeadingsAndTOC(container) {
