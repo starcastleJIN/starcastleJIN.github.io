@@ -9,7 +9,7 @@ const SITE_CONFIG = {
     role: "전력전자 & 모터제어 임베디드 SW 엔지니어",
     tagline: "수식적 모델링에서 DSP 펌웨어 및 하드웨어 실증까지, 전 과정을 아우르는 엔지니어링",
     bio: "전기공학 석사(전력전자 및 모터 제어 연구실) 출신으로, 3-Level Vienna Rectifier / Full-Bridge LLC / Flyback SMPS 회로 설계부터 TI C2000 DSP 기반 PMSM/IPMSM 센서리스(I-f 제어) 펌웨어 알고리즘 개발까지 전 과정을 주도합니다.",
-    avatar: "https://github.com/starcastleJIN.png", // 모던 아바타 유지
+    avatar: "assets/images/profile.jpg", // 모던 아바타 유지
     location: "Daejeon / Seoul, Republic of Korea",
     email: "jsgyu0223@gmail.com",
     githubUsername: "starcastleJIN",
