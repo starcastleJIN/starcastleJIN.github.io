@@ -168,7 +168,7 @@ const SITE_CONFIG = {
       links: [
         { label: "경력 & 학술 연계 ⬇", url: "#wonik-pne", type: "internal" }
       ],
-      thumbnail: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=80"
+      thumbnail: "assets/images/projects/ev-charger.jpg"
     },
     {
       id: "project-vacuum-pump",
@@ -194,7 +194,7 @@ const SITE_CONFIG = {
       links: [
         { label: "KCI 논문지 원문 ↗", url: "https://doi.org/10.6113/TKPE.2025.30.3.215", type: "external" }
       ],
-      thumbnail: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&auto=format&fit=crop&q=80"
+      thumbnail: "assets/images/projects/motor-test.jpg"
     },
     {
       id: "project-hmc-buck",
@@ -220,7 +220,7 @@ const SITE_CONFIG = {
       links: [
         { label: "경력 & 학술 연계 ⬇", url: "#experience", type: "internal" }
       ],
-      thumbnail: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=800&auto=format&fit=crop&q=80"
+      thumbnail: "assets/images/projects/buck-test.jpg"
     },
     {
       id: "project-r2cd-snubber",
@@ -246,7 +246,7 @@ const SITE_CONFIG = {
       links: [
         { label: "IEEE Access 원문 읽기 ↗", url: "https://doi.org/10.1109/ACCESS.2024.3458191", type: "external" }
       ],
-      thumbnail: "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=800&auto=format&fit=crop&q=80"
+      thumbnail: "assets/images/projects/flyback-research.jpg"
     }
   ],
 

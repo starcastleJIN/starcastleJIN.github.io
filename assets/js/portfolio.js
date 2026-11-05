@@ -182,17 +182,19 @@ function renderProjects() {
       <div>
         <!-- Card Header Image & Overlay -->
         <div class="relative h-48 sm:h-52 overflow-hidden bg-slate-100 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
+          <a href="${escapeHTML(project.thumbnail)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHTML(project.title)} 이미지 확대 보기">
           <img 
             src="${escapeHTML(project.thumbnail)}" 
             alt="${escapeHTML(project.title)}" 
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            class="w-full h-full object-contain bg-slate-100 dark:bg-slate-900"
             loading="lazy"
-            onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80'"
+
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent"></div>
+          </a>
+          <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent"></div>
           
           <!-- Top Badges -->
-          <div class="absolute top-3 left-3 right-3 flex items-center justify-between gap-2">
+          <div class="pointer-events-none absolute top-3 left-3 right-3 flex items-center justify-between gap-2">
             <span class="px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider rounded-lg border backdrop-blur-md ${badgeClass}">
               ${escapeHTML(project.badge || "Engineering")}
             </span>
@@ -202,7 +204,7 @@ function renderProjects() {
           </div>
 
           <!-- Bottom Overlay Info (Partner & Period) -->
-          <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs text-white/90 font-medium drop-shadow">
+          <div class="pointer-events-none absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs text-white/90 font-medium drop-shadow">
             <span class="flex items-center gap-1.5 font-semibold text-slate-100 truncate pr-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400 flex-shrink-0"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
               ${escapeHTML(project.partner || "")}
@@ -215,6 +217,16 @@ function renderProjects() {
 
         <!-- Card Content Body -->
         <div class="p-6 sm:p-7">
+          ${project.id === "project-vacuum-pump" ? `
+            <details class="project-evidence mb-5 rounded-xl border border-slate-200 dark:border-slate-700 p-4">
+              <summary class="cursor-pointer font-bold text-sm text-emerald-700 dark:text-emerald-400">I-f 제어 실험 결과 보기</summary>
+              <p class="mt-3 text-xs leading-relaxed text-slate-600 dark:text-slate-300">고부하 급가속 조건에서 보상 알고리즘 적용 전후의 속도와 각도 응답을 비교한 실험 결과입니다. 출처: 포트폴리오 발표자료 34쪽.</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
+                <figure><a href="assets/images/projects/motor-before.jpg" target="_blank" rel="noopener noreferrer"><img src="assets/images/projects/motor-before.jpg" alt="보상 적용 전 고부하 급가속 실험 파형" loading="lazy" class="w-full rounded-lg"></a><figcaption class="text-xs mt-1 text-slate-600 dark:text-slate-300">보상 적용 전 · 그림 확대 ↗</figcaption></figure>
+                <figure><a href="assets/images/projects/motor-after.jpg" target="_blank" rel="noopener noreferrer"><img src="assets/images/projects/motor-after.jpg" alt="보상 적용 후 고부하 급가속 실험 파형" loading="lazy" class="w-full rounded-lg"></a><figcaption class="text-xs mt-1 text-slate-600 dark:text-slate-300">보상 적용 후 · 그림 확대 ↗</figcaption></figure>
+              </div>
+            </details>` : ""}
+          <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">이미지 출처: 포트폴리오 발표자료 · 클릭하여 확대</p>
           <!-- Title & Subtitle -->
           <div class="mb-4">
             <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-snug group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
